@@ -1,0 +1,465 @@
+[
+  {
+    "ContainingType": "IPOApi.Controllers.AuthController",
+    "Method": "GenerateToken",
+    "RelativePath": "auth/generate-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IPOApi.Controllers.LoginController",
+    "Method": "ChangePassword",
+    "RelativePath": "ChangePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Obj",
+        "Type": "IPOApi.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IPOApi.Controllers.LoginController",
+    "Method": "ChkLogin",
+    "RelativePath": "ChkLogin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "iudObj",
+        "Type": "IPOApi.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IPOApi.Controllers.ClientSetupController",
+    "Method": "ClientType",
+    "RelativePath": "ClientType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inscObj",
+        "Type": "IPOApi.Models.ClientSetupModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.QcdmasterController",
+    "Method": "getallqcdmaster",
+    "RelativePath": "getallqcdmaster",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "in_user_code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_master_code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.QcdmasterController",
+    "Method": "getallqcdmaster2",
+    "RelativePath": "getallqcdmaster1",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IPOApi.Controllers.LoginController",
+    "Method": "getMenu",
+    "RelativePath": "getMenu",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objModel",
+        "Type": "IPOApi.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IPOApi.Controllers.LoginController",
+    "Method": "getOTP",
+    "RelativePath": "getOTP",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objModel",
+        "Type": "IPOApi.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.UtilityController",
+    "Method": "jobcompleted",
+    "RelativePath": "jobcompleted",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "in_start_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_end_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_jobtype_code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_user_code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.UtilityController",
+    "Method": "jobinpogress",
+    "RelativePath": "jobinpogress",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "in_start_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_end_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_jobtype_code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_user_code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.UtilityController",
+    "Method": "jobinQueue",
+    "RelativePath": "jobinQueue",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "in_start_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_end_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_jobtype_code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_user_code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.UtilityController",
+    "Method": "JobStatus",
+    "RelativePath": "jobStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "in_start_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_end_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_jobtype_code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_jobstatus",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_user_code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.UtilityController",
+    "Method": "Jobtype",
+    "RelativePath": "jobtype",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IPOApi.Controllers.IssueSetupController",
+    "Method": "OfferType",
+    "RelativePath": "OfferType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objgridread",
+        "Type": "IPOApi.Models.Qcdgridread",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.QcdmasterController",
+    "Method": "QcdMaster",
+    "RelativePath": "QcdMaster",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "action",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "active_status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "masterCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "masterGid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "mastermutiplename",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "masterName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "masterShortCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "masterSyscode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ParentMasterSyscode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "depend_parent_master_syscode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "depend_master_syscode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "depend_flag",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.QcdmasterController",
+    "Method": "QcdMasterGridRead",
+    "RelativePath": "QcdMasterGridRead",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "in_user_code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_master_code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.QcdmasterController",
+    "Method": "QcdMasterRead",
+    "RelativePath": "QcdMasterRead",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "in_user_code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAapi.Controllers.UtilityController",
+    "Method": "SuspendKoQueue",
+    "RelativePath": "SuspendKoQueue",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "in_koqueue_remark",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_koqueue_gid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "in_user_code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IPOApi.Controllers.LoginController",
+    "Method": "User_loginvalidate",
+    "RelativePath": "User_loginvalidate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "iudObj",
+        "Type": "IPOApi.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IPOApi.Controllers.LoginController",
+    "Method": "validateOTP",
+    "RelativePath": "validateOTP",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objModel",
+        "Type": "IPOApi.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STAReportsAPI.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[STAReportsAPI.WeatherForecast, IPOApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

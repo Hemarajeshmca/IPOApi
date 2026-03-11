@@ -1,0 +1,327 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\panvalidationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\panvalidationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\dividendprocessdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\dividendprocessdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\controllers\\dividendprocesscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:controllers\\dividendprocesscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\controllers\\panvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:controllers\\panvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\controllers\\ruleenginecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:controllers\\ruleenginecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\controllers\\qcdmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:controllers\\qcdmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\controllers\\dividendmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:controllers\\dividendmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\ruleenginedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\ruleenginedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\qcdmasterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\qcdmasterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\qcdmastersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\qcdmastersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\mysqldataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\mysqldataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\logindata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\logindata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\idatabasehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\idatabasehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\dividendmasterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\dividendmasterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\dataparametermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\dataparametermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\databasehandlerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\databasehandlerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|e:\\venki shared project\\staweb_final\\staweb\\staweb\\staapi\\stadataaccess\\commonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62C5E4E-0A9F-E155-A571-EA44968097D0}|STAapi.csproj|solutionrelative:stadataaccess\\commonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PanValidationController.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\PanValidationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PanValidationController.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\PanValidationController.cs",
+              "RelativeToolTip": "Controllers\\PanValidationController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:42:58.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAhwAgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:42:52.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DividendProcessController.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\DividendProcessController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DividendProcessController.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\DividendProcessController.cs",
+              "RelativeToolTip": "Controllers\\DividendProcessController.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAjwGcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:42:47.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DividendProcessData.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DividendProcessData.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\DividendProcessData.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DividendProcessData.cs",
+              "RelativeToolTip": "STADataAccess\\DividendProcessData.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAlwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:41:39.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PanValidationData.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\PanValidationData.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\PanValidationData.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\PanValidationData.cs",
+              "RelativeToolTip": "STADataAccess\\PanValidationData.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAApwEoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:42:00.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RuleEngineController.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\RuleEngineController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RuleEngineController.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\RuleEngineController.cs",
+              "RelativeToolTip": "Controllers\\RuleEngineController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:43:07.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QcdmasterController.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\QcdmasterController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QcdmasterController.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\QcdmasterController.cs",
+              "RelativeToolTip": "Controllers\\QcdmasterController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:43:03.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DividendMasterController.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\DividendMasterController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DividendMasterController.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\Controllers\\DividendMasterController.cs",
+              "RelativeToolTip": "Controllers\\DividendMasterController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:42:42.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RuleEngineData.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\RuleEngineData.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\RuleEngineData.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\RuleEngineData.cs",
+              "RelativeToolTip": "STADataAccess\\RuleEngineData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:42:17.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "QcdmasterService.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\QcdmasterService.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\QcdmasterService.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\QcdmasterService.cs",
+              "RelativeToolTip": "STADataAccess\\QcdmasterService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:42:13.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "QcdmastersData.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\QcdmastersData.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\QcdmastersData.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\QcdmastersData.cs",
+              "RelativeToolTip": "STADataAccess\\QcdmastersData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:42:08.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MySqlDataAccess.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\MySqlDataAccess.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\MySqlDataAccess.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\MySqlDataAccess.cs",
+              "RelativeToolTip": "STADataAccess\\MySqlDataAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:41:56.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginData.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\LoginData.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\LoginData.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\LoginData.cs",
+              "RelativeToolTip": "STADataAccess\\LoginData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:41:48.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IDatabaseHandler.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\IDatabaseHandler.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\IDatabaseHandler.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\IDatabaseHandler.cs",
+              "RelativeToolTip": "STADataAccess\\IDatabaseHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:41:45.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DividendMasterData.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DividendMasterData.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\DividendMasterData.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DividendMasterData.cs",
+              "RelativeToolTip": "STADataAccess\\DividendMasterData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:41:31.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DBManager.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DBManager.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\DBManager.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DBManager.cs",
+              "RelativeToolTip": "STADataAccess\\DBManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:41:26.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DataParameterManager.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DataParameterManager.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\DataParameterManager.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DataParameterManager.cs",
+              "RelativeToolTip": "STADataAccess\\DataParameterManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:41:21.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DatabaseHandlerFactory.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DatabaseHandlerFactory.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\DatabaseHandlerFactory.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\DatabaseHandlerFactory.cs",
+              "RelativeToolTip": "STADataAccess\\DatabaseHandlerFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:41:16.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CommonModel.cs",
+              "DocumentMoniker": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\CommonModel.cs",
+              "RelativeDocumentMoniker": "STADataAccess\\CommonModel.cs",
+              "ToolTip": "E:\\Venki Shared Project\\STAWeb_Final\\STAWeb\\STAWeb\\STAapi\\STADataAccess\\CommonModel.cs",
+              "RelativeToolTip": "STADataAccess\\CommonModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:41:12.115Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

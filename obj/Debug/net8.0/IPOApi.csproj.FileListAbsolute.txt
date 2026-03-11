@@ -1,0 +1,278 @@
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\.filenesting.json
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\appsettings.Development.json
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\appsettings.json
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\IPOApi.staticwebassets.endpoints.json
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\IPOApi.exe
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\IPOApi.deps.json
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\IPOApi.runtimeconfig.json
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\IPOApi.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\IPOApi.pdb
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\EPPlus.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\EPPlus.Interfaces.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Google.Protobuf.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\log4net.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\MySql.Data.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\MySqlConnector.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Serilog.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Serilog.AspNetCore.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Serilog.Sinks.File.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\System.Drawing.Common.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\System.Security.Permissions.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\System.Windows.Extensions.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\ZstdSharp.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\Venki Shared Project\IPO\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.csproj.AssemblyReference.cache
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\rpswa.dswa.cache.json
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.GeneratedMSBuildEditorConfig.editorconfig
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.AssemblyInfoInputs.cache
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.AssemblyInfo.cs
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.csproj.CoreCompileInputs.cache
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.MvcApplicationPartsAssemblyInfo.cs
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.MvcApplicationPartsAssemblyInfo.cache
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.sourcelink.json
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\rjimswa.dswa.cache.json
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\scopedcss\bundle\IPOApi.styles.css
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\staticwebassets.build.json
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\staticwebassets.build.json.cache
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\staticwebassets.development.json
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.csproj.Up2Date
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.dll
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\refint\IPOApi.dll
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.pdb
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\IPOApi.genruntimeconfig.cache
+E:\Venki Shared Project\IPO\IPOApi\obj\Debug\net8.0\ref\IPOApi.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\.filenesting.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\appsettings.Development.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\appsettings.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\IPOApi.staticwebassets.endpoints.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\IPOApi.exe
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\IPOApi.deps.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\IPOApi.runtimeconfig.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\IPOApi.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\IPOApi.pdb
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\EPPlus.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\EPPlus.Interfaces.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Google.Protobuf.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\log4net.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\MySql.Data.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\MySqlConnector.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Serilog.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Serilog.AspNetCore.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Serilog.Sinks.File.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\System.Drawing.Common.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\System.Security.Permissions.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\System.Windows.Extensions.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\ZstdSharp.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.csproj.AssemblyReference.cache
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.GeneratedMSBuildEditorConfig.editorconfig
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.AssemblyInfoInputs.cache
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.AssemblyInfo.cs
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.csproj.CoreCompileInputs.cache
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.MvcApplicationPartsAssemblyInfo.cs
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.MvcApplicationPartsAssemblyInfo.cache
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.sourcelink.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\scopedcss\bundle\IPOApi.styles.css
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets.build.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets.development.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.IPOApi.Microsoft.AspNetCore.StaticWebAssets.props
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.IPOApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.build.IPOApi.props
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.IPOApi.props
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.IPOApi.props
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets.pack.json
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.csproj.Up2Date
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\refint\IPOApi.dll
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.pdb
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\IPOApi.genruntimeconfig.cache
+E:\user\hema\IPOProject\IPOProject\IPOApi\obj\Debug\net8.0\ref\IPOApi.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.csproj.AssemblyReference.cache
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.GeneratedMSBuildEditorConfig.editorconfig
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.AssemblyInfoInputs.cache
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.AssemblyInfo.cs
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.csproj.CoreCompileInputs.cache
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.MvcApplicationPartsAssemblyInfo.cs
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.MvcApplicationPartsAssemblyInfo.cache
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.sourcelink.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\.filenesting.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\appsettings.Development.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\appsettings.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\IPOApi.staticwebassets.endpoints.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\IPOApi.exe
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\IPOApi.deps.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\IPOApi.runtimeconfig.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\IPOApi.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\IPOApi.pdb
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\EPPlus.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\EPPlus.Interfaces.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Google.Protobuf.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\log4net.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\MySql.Data.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\MySqlConnector.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Serilog.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Serilog.AspNetCore.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Serilog.Sinks.File.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\System.Drawing.Common.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\System.Security.Permissions.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\System.Windows.Extensions.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\ZstdSharp.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\scopedcss\bundle\IPOApi.styles.css
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets.build.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets.development.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.IPOApi.Microsoft.AspNetCore.StaticWebAssets.props
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.IPOApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.build.IPOApi.props
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.IPOApi.props
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.IPOApi.props
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets.pack.json
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.csproj.Up2Date
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\refint\IPOApi.dll
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.pdb
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\IPOApi.genruntimeconfig.cache
+E:\user\hema\IPOProject\IPOProject_API\IPOApi\obj\Debug\net8.0\ref\IPOApi.dll

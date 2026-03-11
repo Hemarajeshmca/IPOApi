@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "BuAklpjdYczAwNmYB69fiDWoH+kMAv5Z1BCmapxAzi0=",
+  "Source": "IPOApi",
+  "BasePath": "_content/IPOApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
