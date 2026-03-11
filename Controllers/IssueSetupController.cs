@@ -47,7 +47,7 @@ namespace IPOApi.Controllers
         }
 
         [HttpPost("Get_Offerlist")]
-        public IActionResult Get_Offerlist(string client_code)
+        public IActionResult Get_Offerlist()
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
 
@@ -62,7 +62,33 @@ namespace IPOApi.Controllers
                 header_value.user_code = getvalue;
                 header_value.lang_code = getlangCode;
                 header_value.role_code = getRoleCode;
-                response = IssueSetupService.Get_Offerlist(client_code, header_value, constring);
+                response = IssueSetupService.Get_Offerlist(header_value, constring);
+
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("Get_Offerlist")]
+        public IActionResult Get_OfferFetch(string client_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+
+            headerValue header_value = new headerValue();
+            DataSet response = new DataSet();
+
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = IssueSetupService.Get_OfferFetch(client_code, header_value, constring);
 
                 return Ok(response);
             }
@@ -113,6 +139,32 @@ namespace IPOApi.Controllers
                 header_value.lang_code = getlangCode;
                 header_value.role_code = getRoleCode;
                 response = IssueSetupService.Set_OfferDetail(offerdetail, header_value, constring);
+                if (response == null || response.Rows.Count == 0)
+                    return NotFound("No records found");
+
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("Set_OfferBankers")]
+        public IActionResult Set_OfferBankers(OfferBankerModel offerdetail)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            headerValue header_value = new headerValue();
+            DataTable response = new DataTable();
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = IssueSetupService.Set_OfferBankers(offerdetail, header_value, constring);
                 if (response == null || response.Rows.Count == 0)
                     return NotFound("No records found");
 
