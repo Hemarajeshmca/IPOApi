@@ -25,14 +25,30 @@ namespace IPOApi.Services
             { }
             return ds;
         }
-        public static DataSet Get_Offerlist(string client_code, headerValue headerval, string constring)
+        public static DataSet Get_Offerlist(headerValue headerval, string constring)
         {
             DataSet ds = new DataSet();
 
             try
             {
                 IssueSetupData objData = new IssueSetupData();
-                ds = objData.Get_Offerlist(client_code, headerval, constring);
+                ds = objData.Get_Offerlist( headerval, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
+        public static DataSet Get_OfferFetch(string client_code, headerValue headerval, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                ds = objData.Get_OfferFetch(client_code, headerval, constring);
             }
             catch (Exception)
             {
@@ -66,6 +82,18 @@ namespace IPOApi.Services
             return dt;
         }
 
+        public static DataTable Set_OfferBankers(OfferBankerModel offerdetail, headerValue headerval, string constring)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                dt = objData.Set_OfferBankers(offerdetail, headerval, constring);
+            }
+            catch (Exception e)
+            { }
+            return dt;
+        }
 
     }
 }

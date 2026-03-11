@@ -36,7 +36,22 @@ namespace IPOApi.STADataAccess
             return ds; // Return the DataSet with results
         }
 
-        public DataSet Get_Offerlist(string client_code, headerValue headerval, string constring)
+        public DataSet Get_Offerlist(headerValue headerval, string constring)
+        {
+            DBManager dbManager = new DBManager(constring);
+            parameters = new List<IDbDataParameter>();
+             
+            parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String)); 
+            DataSet ds = dbManager.execStoredProcedure(
+                "pr_ipo_get_offerlist",
+                CommandType.StoredProcedure,
+                parameters.ToArray()
+            );
+
+            return ds;
+        }
+
+        public DataSet Get_OfferFetch(string client_code, headerValue headerval, string constring)
         {
             DBManager dbManager = new DBManager(constring);
             parameters = new List<IDbDataParameter>();
@@ -48,7 +63,7 @@ namespace IPOApi.STADataAccess
             parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
 
             DataSet ds = dbManager.execStoredProcedure(
-                "pr_ipo_get_offerlist",
+                "pr_ipo_get_offerFetch",
                 CommandType.StoredProcedure,
                 parameters.ToArray()
             );
@@ -78,6 +93,8 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
                 parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_offer_code", "", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_offer_header_gid", 0, DbType.Int32, ParameterDirection.Output));
                 DataSet ds = dbManager.execStoredProcedure(
                     "pr_ipo_set_offerheader",
                     CommandType.StoredProcedure,
