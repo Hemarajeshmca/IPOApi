@@ -27,16 +27,8 @@
 
         public string client_code { get; set; }
 
-        public char active_status { get; set; }
-
-        public DateTime created_date { get; set; }
-
-        public string created_by { get; set; }
-
-        public DateTime updated_date { get; set; }
-
-        public string updated_by { get; set; }
-
+        public char active_status { get; set; } 
+        
         public char delete_flag { get; set; }
     }
 
@@ -73,5 +65,34 @@
         public string user_code { get; set; }
 
         public string action { get; set; }
+    }
+
+    public class OfferBankerModel
+    {
+        public string action { get; set; }
+
+        public int banker_gid { get; set; }
+
+        public string banker_type { get; set; }
+
+        public string banker_name { get; set; }
+
+        public string banker_address { get; set; }
+
+        public int banker_city { get; set; }
+
+        public int banker_state { get; set; }
+
+        public string banker_pincode { get; set; }
+
+        public string banker_accountno { get; set; }
+
+        public string banker_ifsc { get; set; }
+
+        public string offer_code { get; set; }
+
+        public string client_code { get; set; }
+
+        public string user_code { get; set; }
     }
 }

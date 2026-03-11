@@ -79,7 +79,7 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
                 parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
                 DataSet ds = dbManager.execStoredProcedure(
-                    "pr_offer_header",
+                    "pr_ipo_set_offerheader",
                     CommandType.StoredProcedure,
                     parameters.ToArray()
                 );
@@ -92,7 +92,7 @@ namespace IPOApi.STADataAccess
             catch (Exception ex)
             {
                 CommonHeader objlog = new CommonHeader();
-                objlog.logger("SP: pr_offer_header | Error: " + ex.Message);
+                objlog.logger("SP: pr_ipo_set_offerheader | Error: " + ex.Message);
             }
 
             return result;
@@ -126,7 +126,7 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
                 parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
                 DataSet ds = dbManager.execStoredProcedure(
-                    "pr_offer_detail",
+                    "pr_ipo_set_offerdetail",
                     CommandType.StoredProcedure,
                     parameters.ToArray()
                 );
@@ -139,7 +139,50 @@ namespace IPOApi.STADataAccess
             catch (Exception ex)
             {
                 CommonHeader objlog = new CommonHeader();
-                objlog.logger("SP: pr_offer_detail | Error: " + ex.Message);
+                objlog.logger("SP: pr_ipo_set_offerdetail | Error: " + ex.Message);
+            }
+
+            return result;
+        }
+
+        public DataTable Set_OfferBankers(OfferBankerModel offerbanker, headerValue headerval, string constring)
+        {
+            DataTable result = new DataTable();
+
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_action", offerbanker.action, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_banker_gid", offerbanker.banker_gid, DbType.Int32));
+                parameters.Add(dbManager.CreateParameter("in_banker_type", offerbanker.banker_type, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_banker_name", offerbanker.banker_name, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_banker_address", offerbanker.banker_address, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_banker_city", offerbanker.banker_city, DbType.Int32));
+                parameters.Add(dbManager.CreateParameter("in_banker_state", offerbanker.banker_state, DbType.Int32));
+                parameters.Add(dbManager.CreateParameter("in_banker_pincode", offerbanker.banker_pincode, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_banker_accountno", offerbanker.banker_accountno, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_banker_ifsc", offerbanker.banker_ifsc, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_offer_code", offerbanker.offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_client_code", offerbanker.client_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
+                DataSet ds = dbManager.execStoredProcedure(
+                    "pr_ipo_set_offerbanker",
+                    CommandType.StoredProcedure,
+                    parameters.ToArray()
+                );
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    result = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP: pr_ipo_set_offerbanker | Error: " + ex.Message);
             }
 
             return result;
