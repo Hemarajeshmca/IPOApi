@@ -68,7 +68,7 @@ namespace STAapi.Controllers
 
 
 		[HttpPost("jobcompleted")]
-		public IActionResult jobcompleted(JobCompleted objJobCompleted)
+		public IActionResult jobcompleted([FromBody] JobCompleted objJobCompleted)
 		{
 			constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
 			headerValue header_value = new headerValue();
