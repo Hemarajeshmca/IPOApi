@@ -72,7 +72,7 @@ namespace IPOApi.Controllers
             }
         }
 
-        [HttpPost("Get_Offerlist")]
+        [HttpPost("Get_OfferFetch")]
         public IActionResult Get_OfferFetch(string client_code)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
