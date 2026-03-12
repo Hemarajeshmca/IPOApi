@@ -86,12 +86,12 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("p_action", insObj.p_action, DbType.String));
                 parameters.Add(dbManager.CreateParameter("p_client_gid", insObj.p_client_gid, DbType.String));
                 parameters.Add(dbManager.CreateParameter("out_msg", "out", DbType.String, ParameterDirection.Output));
-                ds = dbManager.execStoredProcedurelist("pr_trn_tclientdetails_get", CommandType.StoredProcedure, parameters.ToArray());
+                ds = dbManager.execStoredProcedurelist("pr_get_tclientdetails", CommandType.StoredProcedure, parameters.ToArray());
             }
             catch (Exception ex)
             {
                 CommonHeader objlog = new CommonHeader();
-                objlog.logger("SP:pr_trn_tclientdetails_get Error Message: " + ex.Message);
+                objlog.logger("SP:pr_get_tclientdetails Error Message: " + ex.Message);
             }
 
             return ds;
