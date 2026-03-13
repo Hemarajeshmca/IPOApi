@@ -16,16 +16,18 @@ namespace IPOApi.Models
     public class QcdmasterModel
 	{
 		public string in_user_code { get; set; }
+        public string in_master_code { get; set; }
 
-	}
+    }
+	
 
-	public class Qcdgridread
-	{
-		public string in_user_code { get; set; }
-		public string in_master_code { get; set; }
-	}
+    public class Qcdgridread
+    {
+        public string in_user_code { get; set; }
+        public string in_master_code { get; set; }
+    }
 
-	public class mainQCDMaster
+    public class mainQCDMaster
 	{
 		public string action { get; set; }
 		public string active_status { get; set; }

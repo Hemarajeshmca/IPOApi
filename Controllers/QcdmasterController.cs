@@ -43,7 +43,7 @@ namespace STAapi.Controllers
 		}
 
 		[HttpPost("QcdMasterGridRead")]
-		public IActionResult QcdMasterGridRead(Qcdgridread objgridread)
+		public IActionResult QcdMasterGridRead([FromBody] Qcdgridread objgridread)
 		{
 			constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
 			headerValue header_value = new headerValue();
