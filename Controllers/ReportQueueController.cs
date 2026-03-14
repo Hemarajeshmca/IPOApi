@@ -1,17 +1,18 @@
 ﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
 using DocumentFormat.OpenXml.Spreadsheet;
+using IPOApi.Models;
+using IPOApi.Services;
+using IPOApi.Services.Interface;
+using IPOApi.STADataAccess;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MySqlX.XDevAPI.Common;
 using Newtonsoft.Json;
 using ReconDataLayer;
-using IPOApi.Models;
-using IPOApi.Services;
-using IPOApi.Services.Interface;
 using System.Data;
-using IPOApi.STADataAccess;
 
-namespace Recon_API.Controllers
+namespace IPOApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -29,7 +30,7 @@ namespace Recon_API.Controllers
             _configuration = configuration;
         }
 
-
+       
         [HttpPost("setReportqueue")]
         public IActionResult setReportqueue([FromBody] ReportQueueModel.reportqueue objReportqueuemodel)
         {
