@@ -46,14 +46,12 @@ namespace IPOApi.Controllers
             }
         }
 
-        [HttpPost("Get_Offerlist")]
+        [HttpGet("GetOfferlist")]
         public IActionResult Get_Offerlist()
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
-
             headerValue header_value = new headerValue();
             DataSet response = new DataSet();
-
             try
             {
                 var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
@@ -63,8 +61,8 @@ namespace IPOApi.Controllers
                 header_value.lang_code = getlangCode;
                 header_value.role_code = getRoleCode;
                 response = IssueSetupService.Get_Offerlist(header_value, constring);
-
-                return Ok(response);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
             }
             catch (Exception e)
             {
@@ -98,8 +96,8 @@ namespace IPOApi.Controllers
             }
         }
 
-        [HttpPost("Set_OfferHeader")]
-        public IActionResult Set_OfferHeader(OfferHeaderModel offerheader)
+        [HttpPost("SetOfferHeader")]
+        public IActionResult SetOfferHeader([FromBody] OfferHeaderModel offerheader)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             headerValue header_value = new headerValue();
@@ -114,9 +112,10 @@ namespace IPOApi.Controllers
                 header_value.role_code = getRoleCode;
                 response = IssueSetupService.setoffer_header(offerheader, header_value, constring);
                 if (response == null || response.Rows.Count == 0)
-                    return NotFound("No records found"); 
+                    return NotFound("No records found");
 
-                return Ok(response);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
             }
             catch (Exception e)
             {
@@ -175,5 +174,6 @@ namespace IPOApi.Controllers
                 return Problem(title: e.Message);
             }
         }
-    }
+
+      }
 }
