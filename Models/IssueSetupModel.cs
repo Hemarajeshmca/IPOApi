@@ -11,24 +11,17 @@
 
     public class OfferHeaderModel
     {
-        public string action { get; set; }
-        public int offer_header_gid { get; set; }
-        public string offer_code { get; set; }
-
-        public string offer_type { get; set; }
-
-        public string offer_listing_no { get; set; }
-
-        public string offer_isin { get; set; }
-
-        public string offer_status { get; set; }
-
-        public string offer_remarks { get; set; }
-
-        public string client_code { get; set; }
-
-        public char active_status { get; set; } 
-        
+        public string? action { get; set; }
+        public string? offer_header_gid { get; set; }
+        public string? offer_code { get; set; }
+        public string? offer_type { get; set; }
+        public string? offer_listing_no { get; set; }
+        public string? offer_isin { get; set; }
+        public string? offer_status { get; set; }
+        public string? offer_remarks { get; set; }
+        public string? client_code { get; set; }
+        public string? user_code { get; set; }
+        public char active_status { get; set; }         
         public char delete_flag { get; set; }
     }
 

@@ -47,7 +47,6 @@ namespace IPOApi.STADataAccess
                 CommandType.StoredProcedure,
                 parameters.ToArray()
             );
-
             return ds;
         }
 
@@ -79,10 +78,9 @@ namespace IPOApi.STADataAccess
             {
                 DBManager dbManager = new DBManager(constring);
                 parameters = new List<IDbDataParameter>(); 
-
                 parameters.Add(dbManager.CreateParameter("in_action", offerheader.action, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_offer_header_gid", offerheader.offer_header_gid, DbType.Int32));
-                parameters.Add(dbManager.CreateParameter("in_offer_code", offerheader.offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_offer_header_gid", Convert.ToInt16(offerheader.offer_header_gid), DbType.Int32, ParameterDirection.InputOutput));
+                parameters.Add(dbManager.CreateParameter("in_offer_code", offerheader.offer_code, DbType.String, ParameterDirection.InputOutput));
                 parameters.Add(dbManager.CreateParameter("in_offer_type", offerheader.offer_type, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_offer_listing", offerheader.offer_listing_no, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_offer_isin", offerheader.offer_isin, DbType.String));
@@ -90,17 +88,10 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_offer_remarks", offerheader.offer_remarks, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_client_code", offerheader.client_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_active_status", offerheader.active_status, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", offerheader.user_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
                 parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
-                parameters.Add(dbManager.CreateParameter("out_offer_code", "", DbType.String, ParameterDirection.Output));
-                parameters.Add(dbManager.CreateParameter("out_offer_header_gid", 0, DbType.Int32, ParameterDirection.Output));
-                DataSet ds = dbManager.execStoredProcedure(
-                    "pr_ipo_set_offerheader",
-                    CommandType.StoredProcedure,
-                    parameters.ToArray()
-                );
-
+                DataSet ds = dbManager.execStoredProcedure("pr_ipo_set_offerheader", CommandType.StoredProcedure,parameters.ToArray());
                 if (ds != null && ds.Tables.Count > 0)
                 {
                     result = ds.Tables[0];
