@@ -50,14 +50,14 @@ namespace IPOApi.STADataAccess
             return ds;
         }
 
-        public DataSet Get_OfferFetch(string client_code, headerValue headerval, string constring)
+        public DataSet Get_OfferFetch(string client_code, string offer_code, headerValue headerval, string constring)
         {
             DBManager dbManager = new DBManager(constring);
             parameters = new List<IDbDataParameter>();
 
+            parameters.Add(dbManager.CreateParameter("in_offer_code", offer_code, DbType.String));
             parameters.Add(dbManager.CreateParameter("in_client_code", client_code, DbType.String));
             parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
-
             parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
             parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
 
