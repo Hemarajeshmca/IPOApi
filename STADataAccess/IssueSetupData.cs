@@ -196,5 +196,215 @@ namespace IPOApi.STADataAccess
             return result;
         }
 
+        public DataTable SetOfferStack(OfferStackModel stack, headerValue headerval, string constring)
+        {
+            DataTable result = new DataTable();
+
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                parameters = new List<IDbDataParameter>();
+
+                parameters.Add(dbManager.CreateParameter("in_action", stack.action, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_gid", stack.stack_gid, DbType.Int32, ParameterDirection.InputOutput));
+                parameters.Add(dbManager.CreateParameter("in_stack_code", stack.stack_code, DbType.String, ParameterDirection.InputOutput));
+                parameters.Add(dbManager.CreateParameter("in_stack_type", stack.stack_type, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_name", stack.stack_name, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_address", stack.stack_address, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_city", stack.stack_city, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_state", stack.stack_state, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_pincode", stack.stack_pincode, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_contact", stack.stack_contact, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_designation", stack.stack_designation, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_email", stack.stack_email, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_stack_mobile", stack.stack_mobile, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_offer_code", stack.offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_client_code", stack.client_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_active_status", stack.active_status, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
+
+                DataSet ds = dbManager.execStoredProcedure(
+                    "pr_ipo_set_offerstack",
+                    CommandType.StoredProcedure,
+                    parameters.ToArray()
+                );
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    result = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP: pr_ipo_set_offerstack | Error: " + ex.Message);
+            }
+
+            return result;
+        }
+
+        public DataSet GetStackFetch(string action,string client_code, string offer_code,string stack_code,headerValue headerval, string constring)
+        {
+            DBManager dbManager = new DBManager(constring);
+            parameters = new List<IDbDataParameter>();
+
+            parameters.Add(dbManager.CreateParameter("in_action", action, DbType.String));
+            parameters.Add(dbManager.CreateParameter("in_client_code", client_code, DbType.String));
+            parameters.Add(dbManager.CreateParameter("in_offer_code", offer_code, DbType.String));
+            parameters.Add(dbManager.CreateParameter("in_stack_code", stack_code, DbType.String));
+            parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
+            parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
+            parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
+
+            DataSet ds = dbManager.execStoredProcedure(
+                "pr_ipo_get_offerstack_fetch",
+                CommandType.StoredProcedure,
+                parameters.ToArray()
+            );
+
+            return ds;
+        }
+
+        public DataTable SetOffermiles(MilestoneModel milestone, headerValue headerval, string constring)
+        {
+            DataTable result = new DataTable();
+
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                parameters = new List<IDbDataParameter>();
+
+                parameters.Add(dbManager.CreateParameter("in_action", milestone.action, DbType.String));
+
+                parameters.Add(dbManager.CreateParameter("in_milestone_gid", milestone.milestone_gid, DbType.Int32, ParameterDirection.InputOutput));
+
+                parameters.Add(dbManager.CreateParameter("in_offer_openingdate", milestone.offer_openingdate, DbType.DateTime));
+                parameters.Add(dbManager.CreateParameter("in_offer_closingdate", milestone.offer_closingdate, DbType.DateTime));
+                parameters.Add(dbManager.CreateParameter("in_offer_allotmentdate", milestone.offer_allotmentdate, DbType.DateTime));
+                parameters.Add(dbManager.CreateParameter("in_offer_approvaldate", milestone.offer_approvaldate, DbType.DateTime));
+                parameters.Add(dbManager.CreateParameter("in_offer_listingdate", milestone.offer_listingdate, DbType.DateTime));
+                parameters.Add(dbManager.CreateParameter("in_offer_nsdldate", milestone.offer_nsdldate, DbType.DateTime));
+                parameters.Add(dbManager.CreateParameter("in_offer_cdsldate", milestone.offer_cdsldate, DbType.DateTime));
+                parameters.Add(dbManager.CreateParameter("in_offer_refunddate", milestone.offer_refunddate, DbType.DateTime));
+
+                parameters.Add(dbManager.CreateParameter("in_offer_code", milestone.offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_client_code", milestone.client_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_active_status", milestone.active_status, DbType.String));
+
+                parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
+
+                parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
+                DataSet ds = dbManager.execStoredProcedure(
+                    "pr_ipo_set_offermilestones",
+                    CommandType.StoredProcedure,
+                    parameters.ToArray()
+                );
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    result = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP: pr_ipo_set_offermilestones | Error: " + ex.Message);
+            }
+
+            return result;
+        }
+
+        public DataSet GetOffermiles(string client_code, string offer_code, headerValue headerval, string constring)
+        {
+            DBManager dbManager = new DBManager(constring);
+            parameters = new List<IDbDataParameter>();
+
+            parameters.Add(dbManager.CreateParameter("in_client_code", client_code, DbType.String));
+            parameters.Add(dbManager.CreateParameter("in_offer_code", offer_code, DbType.String)); 
+            parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
+            parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
+            parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
+
+            DataSet ds = dbManager.execStoredProcedure(
+                "pr_ipo_get_offermilestones",
+                CommandType.StoredProcedure,
+                parameters.ToArray()
+            );
+
+            return ds;
+        }
+
+        public DataTable SetOfferCategory(CategoryModel model, headerValue headerval, string constring)
+        {
+            DataTable result = new DataTable();
+
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                parameters = new List<IDbDataParameter>();
+
+                parameters.Add(dbManager.CreateParameter("in_action", model.action, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_json", model.json_data, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_offer_code", model.offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_client_code", model.client_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
+
+                parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
+
+                DataSet ds = dbManager.execStoredProcedure(
+                    "pr_ipo_set_offercategory",
+                    CommandType.StoredProcedure,
+                    parameters.ToArray()
+                );
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    result = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP: pr_ipo_set_offercategory | Error: " + ex.Message);
+            }
+
+            return result;
+        }
+
+        public DataSet GetOfferCategory(string offer_code, string client_code, headerValue headerval, string constring)
+        {
+            DataSet result = new DataSet();
+
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                parameters = new List<IDbDataParameter>();
+
+                parameters.Add(dbManager.CreateParameter("in_offer_code", offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_client_code", client_code, DbType.String));
+
+                DataSet ds = dbManager.execStoredProcedure(
+                    "pr_ipo_get_offercategory",
+                    CommandType.StoredProcedure,
+                    parameters.ToArray()
+                );
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    result = ds;
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP: pr_ipo_get_offercategory | Error: " + ex.Message);
+            }
+
+            return result;
+        }
     }
 }

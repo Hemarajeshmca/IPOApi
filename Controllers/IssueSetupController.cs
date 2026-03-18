@@ -175,5 +175,193 @@ namespace IPOApi.Controllers
             }
         }
 
-      }
+        [HttpPost("SetOfferStack")]
+        public IActionResult SetOfferStack(OfferStackModel offerdetail)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            headerValue header_value = new headerValue();
+            DataTable response = new DataTable();
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = IssueSetupService.SetOfferStack(offerdetail, header_value, constring);
+                if (response == null || response.Rows.Count == 0)
+                    return NotFound("No records found");
+
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct); 
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpGet("GetStacklist")]
+        public IActionResult GetStacklist(string action, string client_code, string offer_code, string stack_code, headerValue headerval)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            headerValue header_value = new headerValue();
+            DataSet response = new DataSet();
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = IssueSetupService.GetStacklist(action, client_code, offer_code,stack_code, headerval, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("GetStackFetch")]
+        public IActionResult GetStackFetch(string action, string client_code, string offer_code, string stack_code, headerValue headerval)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+
+            headerValue header_value = new headerValue();
+            DataSet response = new DataSet();
+
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = IssueSetupService.GetStacklist(action,client_code, offer_code, stack_code, header_value, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct); 
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("SetOffermiles")]
+        public IActionResult SetOffermiles(MilestoneModel offerdetail)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            headerValue header_value = new headerValue();
+            DataTable response = new DataTable();
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = IssueSetupService.SetOffermiles(offerdetail, header_value, constring);
+                if (response == null || response.Rows.Count == 0)
+                    return NotFound("No records found");
+
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("GetOffermiles")]
+        public IActionResult GetOffermiles(string client_code, string offer_code, headerValue headerval)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+
+            headerValue header_value = new headerValue();
+            DataSet response = new DataSet();
+
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = IssueSetupService.GetOffermiles(client_code, offer_code, header_value, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+
+        [HttpPost("SetOfferCategory")]
+        public IActionResult SetOfferCategory(CategoryModel offerdetail)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            headerValue header_value = new headerValue();
+            DataTable response = new DataTable();
+
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+
+                response = IssueSetupService.SetOfferCategory(offerdetail, header_value, constring);
+
+                if (response == null || response.Rows.Count == 0)
+                    return NotFound("No records found");
+
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("GetOfferCategory")]
+        public IActionResult GetOfferCategory(string client_code, string offer_code, headerValue headerval)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+
+            headerValue header_value = new headerValue();
+            DataSet response = new DataSet();
+
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = IssueSetupService.GetOfferCategory(client_code, offer_code, header_value, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+    }
 }
