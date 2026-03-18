@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static IPOApi.Models.IssueSetupModel;
+//using static IPOApi.Models.UserManagementModel;
 using static IPOApi.Models.UtilityModel;
 namespace IPOApi.Services
 {
@@ -93,6 +94,92 @@ namespace IPOApi.Services
             catch (Exception e)
             { }
             return dt;
+        }
+        public static DataTable SetOfferStack(OfferStackModel offerdetail, headerValue headerval, string constring)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                dt = objData.SetOfferStack(offerdetail, headerval, constring);
+            }
+            catch (Exception e)
+            { }
+            return dt;
+        }
+
+        public static DataSet GetStacklist(string action, string client_code, string offer_code, string stack_code,headerValue headerval, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                ds = objData.GetStackFetch(action, client_code, offer_code, stack_code, headerval, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
+        public static DataTable SetOffermiles(MilestoneModel offerdetail, headerValue headerval, string constring)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                dt = objData.SetOffermiles(offerdetail, headerval, constring);
+            }
+            catch (Exception e)
+            { }
+            return dt;
+        }
+
+        public static DataSet GetOffermiles( string client_code, string offer_code, headerValue headerval, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                ds = objData.GetOffermiles(client_code, offer_code, headerval, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
+        public static DataTable SetOfferCategory(CategoryModel offerdetail, headerValue headerval, string constring)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                dt = objData.SetOfferCategory(offerdetail, headerval, constring);
+            }
+            catch (Exception e)
+            { }
+            return dt;
+        }
+
+        public static DataSet GetOfferCategory(string client_code, string offer_code, headerValue headerval, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                ds = objData.GetOfferCategory(client_code, offer_code, headerval, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
         }
 
     }
