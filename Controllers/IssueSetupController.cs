@@ -70,8 +70,8 @@ namespace IPOApi.Controllers
             }
         }
 
-        [HttpPost("Get_OfferFetch")]
-        public IActionResult Get_OfferFetch(string client_code)
+        [HttpGet("GetOfferFetch")]
+        public IActionResult GetOfferFetch(string client_code, string offer_code)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
 
@@ -86,9 +86,9 @@ namespace IPOApi.Controllers
                 header_value.user_code = getvalue;
                 header_value.lang_code = getlangCode;
                 header_value.role_code = getRoleCode;
-                response = IssueSetupService.Get_OfferFetch(client_code, header_value, constring);
-
-                return Ok(response);
+                response = IssueSetupService.Get_OfferFetch(client_code, offer_code, header_value, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
             }
             catch (Exception e)
             {
@@ -123,7 +123,7 @@ namespace IPOApi.Controllers
             }
         }
 
-        [HttpPost("Set_OfferDetail")]
+        [HttpPost("SetOfferDetail")]
         public IActionResult Set_OfferDetail(OfferDetailModel offerdetail)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
@@ -149,7 +149,7 @@ namespace IPOApi.Controllers
             }
         }
 
-        [HttpPost("Set_OfferBankers")]
+        [HttpPost("SetOfferBankers")]
         public IActionResult Set_OfferBankers(OfferBankerModel offerdetail)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();

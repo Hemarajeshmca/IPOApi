@@ -41,14 +41,14 @@ namespace IPOApi.Services
             return ds;
         }
 
-        public static DataSet Get_OfferFetch(string client_code, headerValue headerval, string constring)
+        public static DataSet Get_OfferFetch(string client_code, string offer_code, headerValue headerval, string constring)
         {
             DataSet ds = new DataSet();
 
             try
             {
                 IssueSetupData objData = new IssueSetupData();
-                ds = objData.Get_OfferFetch(client_code, headerval, constring);
+                ds = objData.Get_OfferFetch(client_code, offer_code, headerval, constring);
             }
             catch (Exception)
             {
