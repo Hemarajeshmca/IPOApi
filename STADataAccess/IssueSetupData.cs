@@ -130,7 +130,6 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_offer_code", offerdetail.offer_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_client_code", offerdetail.client_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_action", offerdetail.action, DbType.String)); 
                 parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
                 parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
                 DataSet ds = dbManager.execStoredProcedure(
@@ -166,8 +165,8 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_banker_type", offerbanker.banker_type, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_name", offerbanker.banker_name, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_address", offerbanker.banker_address, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_banker_city", offerbanker.banker_city, DbType.Int32));
-                parameters.Add(dbManager.CreateParameter("in_banker_state", offerbanker.banker_state, DbType.Int32));
+                parameters.Add(dbManager.CreateParameter("in_banker_city", offerbanker.banker_city, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_banker_state", offerbanker.banker_state, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_pincode", offerbanker.banker_pincode, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_accountno", offerbanker.banker_accountno, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_ifsc", offerbanker.banker_ifsc, DbType.String));
@@ -221,7 +220,7 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_offer_code", stack.offer_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_client_code", stack.client_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_active_status", stack.active_status, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", stack.user_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
                 parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
 

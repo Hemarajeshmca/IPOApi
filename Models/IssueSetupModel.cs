@@ -28,96 +28,60 @@
     public class OfferDetailModel
     {
         public int offer_detail_gid { get; set; }
-
         public decimal offer_precapital { get; set; }
-
         public int offer_issuesize { get; set; }
-
         public decimal offer_postcapital { get; set; }
-
         public int offer_lotsize { get; set; }
-
         public decimal offer_facevalue { get; set; }
-
         public decimal offer_premiun { get; set; }
-
         public string offer_pricetype { get; set; }
-
         public decimal offer_fixedprice { get; set; }
-
         public decimal offer_maximumprice { get; set; }
-
         public decimal offer_minimumprice { get; set; }
-
         public decimal offer_cutoffprice { get; set; }
-
         public string offer_code { get; set; }
-
         public string client_code { get; set; }
-
         public string user_code { get; set; }
-
         public string action { get; set; }
     }
 
     public class OfferBankerModel
     {
-        public string action { get; set; }
-
+        public string? action { get; set; }
         public int banker_gid { get; set; }
-
-        public string banker_type { get; set; }
-
-        public string banker_name { get; set; }
-
-        public string banker_address { get; set; }
-
-        public int banker_city { get; set; }
-
-        public int banker_state { get; set; }
-
-        public string banker_pincode { get; set; }
-
-        public string banker_accountno { get; set; }
-
-        public string banker_ifsc { get; set; }
-
-        public string offer_code { get; set; }
-
-        public string client_code { get; set; }
-
-        public string user_code { get; set; }
+        public string? banker_type { get; set; }
+        public string? banker_name { get; set; }
+        public string? banker_address { get; set; }
+        public string? banker_city { get; set; }
+        public string? banker_state { get; set; }
+        public string? banker_pincode { get; set; }
+        public string? banker_accountno { get; set; }
+        public string? banker_ifsc { get; set; }
+        public string? offer_code { get; set; }
+        public string? client_code { get; set; }
+        public string? user_code { get; set; }
     }
 
     public class OfferStackModel
     {
-        public string action { get; set; }
-
+        public string? action { get; set; }
         public int? stack_gid { get; set; }
-        public string stack_code { get; set; }
-        public string stack_type { get; set; }
-        public string stack_name { get; set; }
-        public string stack_address { get; set; }
-        public string stack_city { get; set; }
-        public string stack_state { get; set; }
-        public string stack_pincode { get; set; }
-        public string stack_contact { get; set; }
-        public string stack_designation { get; set; }
-        public string stack_email { get; set; }
-        public string stack_mobile { get; set; }
-        public string offer_code { get; set; }
-        public string client_code { get; set; }
-        public string active_status { get; set; }
+        public string? stack_code { get; set; }
+        public string? stack_type { get; set; }
+        public string? stack_name { get; set; }
+        public string? stack_address { get; set; }
+        public string? stack_city { get; set; }
+        public string? stack_state { get; set; }
+        public string? stack_pincode { get; set; }
+        public string? stack_contact { get; set; }
+        public string? stack_designation { get; set; }
+        public string? stack_email { get; set; }
+        public string? stack_mobile { get; set; }
+        public string? offer_code { get; set; }
+        public string? client_code { get; set; }
+        public string? active_status { get; set; }
+        public string? user_code { get; set; }
 
-        public DateTime? created_date { get; set; }
-        public string created_by { get; set; }
-        public DateTime? updated_date { get; set; }
-        public string updated_by { get; set; }
-        public string delete_flag { get; set; }
-
-        // Output parameters (for SP response)
-        public string out_msg { get; set; }
-        public int? out_result { get; set; }
     }
 
     public class MilestoneModel
