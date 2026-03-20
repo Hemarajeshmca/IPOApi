@@ -124,7 +124,7 @@ namespace IPOApi.Controllers
         }
 
         [HttpPost("SetOfferDetail")]
-        public IActionResult Set_OfferDetail(OfferDetailModel offerdetail)
+        public IActionResult Set_OfferDetail([FromBody] OfferDetailModel offerdetail)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             headerValue header_value = new headerValue();
@@ -141,7 +141,8 @@ namespace IPOApi.Controllers
                 if (response == null || response.Rows.Count == 0)
                     return NotFound("No records found");
 
-                return Ok(response);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
             }
             catch (Exception e)
             {
@@ -150,7 +151,7 @@ namespace IPOApi.Controllers
         }
 
         [HttpPost("SetOfferBankers")]
-        public IActionResult Set_OfferBankers(OfferBankerModel offerdetail)
+        public IActionResult Set_OfferBankers([FromBody] OfferBankerModel offerdetail)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             headerValue header_value = new headerValue();
@@ -167,7 +168,8 @@ namespace IPOApi.Controllers
                 if (response == null || response.Rows.Count == 0)
                     return NotFound("No records found");
 
-                return Ok(response);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
             }
             catch (Exception e)
             {
@@ -176,7 +178,7 @@ namespace IPOApi.Controllers
         }
 
         [HttpPost("SetOfferStack")]
-        public IActionResult SetOfferStack(OfferStackModel offerdetail)
+        public IActionResult SetOfferStack([FromBody] OfferStackModel offerdetail)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             headerValue header_value = new headerValue();
@@ -253,7 +255,7 @@ namespace IPOApi.Controllers
         }
 
         [HttpPost("SetOffermiles")]
-        public IActionResult SetOffermiles(MilestoneModel offerdetail)
+        public IActionResult SetOffermiles([FromBody] MilestoneModel offerdetail)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             headerValue header_value = new headerValue();

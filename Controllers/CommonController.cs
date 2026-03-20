@@ -10,7 +10,7 @@ using IPOApi.Models;
 namespace IPOApi.Controllers
 {
     //[Route("api/[controller]")]
-    [ApiController]
+    //[ApiController]
     public class CommonController : ControllerBase
     {
         private IConfiguration _configuration;
