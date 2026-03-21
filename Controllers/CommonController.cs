@@ -45,7 +45,7 @@ namespace IPOApi.Controllers
         }
 
         [HttpPost("configvalue")]
-        public IActionResult configvalue(CommonModel.configvalueModel objconfigvalue)
+        public IActionResult configvalue([FromBody] CommonModel.configvalueModel objconfigvalue)
         {
             //headerValue header_value = new headerValue();
             UserHeader header_value = new UserHeader();

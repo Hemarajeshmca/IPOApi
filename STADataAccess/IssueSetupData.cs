@@ -349,7 +349,7 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_json", model.json_data, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_offer_code", model.offer_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_client_code", model.client_code, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", model.user_code, DbType.String));
 
                 parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
                 parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));

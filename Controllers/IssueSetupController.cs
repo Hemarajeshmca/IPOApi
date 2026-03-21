@@ -309,7 +309,7 @@ namespace IPOApi.Controllers
 
 
         [HttpPost("SetOfferCategory")]
-        public IActionResult SetOfferCategory(CategoryModel offerdetail)
+        public IActionResult SetOfferCategory([FromBody] CategoryModel offerdetail)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             headerValue header_value = new headerValue();
@@ -364,5 +364,8 @@ namespace IPOApi.Controllers
                 return Problem(title: e.Message);
             }
         }
+
+
+
     }
 }
