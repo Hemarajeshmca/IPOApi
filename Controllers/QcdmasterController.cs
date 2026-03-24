@@ -17,7 +17,7 @@ namespace STAapi.Controllers
 		string constring = "";
 
 		[HttpPost("QcdMasterRead")]
-		public IActionResult QcdMasterRead(QcdmasterModel qcdmodel)
+		public IActionResult QcdMasterRead([FromBody] QcdmasterModel qcdmodel)
 		{
             //int ico = 0;
             //int icount = 10 / ico;
@@ -67,7 +67,7 @@ namespace STAapi.Controllers
 		}
 
 		[HttpPost("QcdMaster")]
-		public IActionResult QcdMaster(mainQCDMaster objmaster)
+		public IActionResult QcdMaster([FromBody] mainQCDMaster objmaster)
 		{
 			//int ico = 0;
 			//int icount = 10 / ico;
