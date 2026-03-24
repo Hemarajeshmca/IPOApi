@@ -47,7 +47,7 @@
 
     public class OfferBankerModel
     {
-        public string? action { get; set; }
+        public string? action { get; set; }// add
         public int banker_gid { get; set; }
         public string? banker_type { get; set; }
         public string? banker_name { get; set; }
@@ -56,6 +56,7 @@
         public string? banker_state { get; set; }
         public string? banker_pincode { get; set; }
         public string? banker_accountno { get; set; }
+        public string? banker_holdname { get; set; }        
         public string? banker_ifsc { get; set; }
         public string? offer_code { get; set; }
         public string? client_code { get; set; }
