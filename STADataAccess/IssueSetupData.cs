@@ -168,7 +168,7 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_banker_city", offerbanker.banker_city, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_state", offerbanker.banker_state, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_pincode", offerbanker.banker_pincode, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_banker_holdname", offerbanker.banker_holdname, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_banker_holdname", offerbanker.banker_holdname, DbType.String));// add
                 parameters.Add(dbManager.CreateParameter("in_banker_accountno", offerbanker.banker_accountno, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_ifsc", offerbanker.banker_ifsc, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_offer_code", offerbanker.offer_code, DbType.String));
