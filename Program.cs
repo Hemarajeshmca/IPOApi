@@ -1,7 +1,12 @@
-﻿using Serilog;
+﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using IPOApi;
 using IPOApi.Controllers;
 using IPOApi.Middleware;
+using IPOApi.Services.Interface;
+using IPOApi.STADataAccess.Interface;
+using ReconDataLayer;
+using ReconServiceLayer;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +38,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
+builder.Services.AddScoped<IReportQueueService, ReportQueueService>();
+builder.Services.AddScoped<IReportQueueData, ReportQueueData>();
 builder.Services.AddAuthorization();
 builder.Services.AddSwaggerGen(c =>
 {

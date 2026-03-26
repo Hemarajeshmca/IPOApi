@@ -168,7 +168,7 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_banker_city", offerbanker.banker_city, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_state", offerbanker.banker_state, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_pincode", offerbanker.banker_pincode, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_banker_holdname", offerbanker.banker_holdname, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_banker_holdname", offerbanker.banker_holdname, DbType.String));// add
                 parameters.Add(dbManager.CreateParameter("in_banker_accountno", offerbanker.banker_accountno, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_banker_ifsc", offerbanker.banker_ifsc, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_offer_code", offerbanker.offer_code, DbType.String));
@@ -288,20 +288,13 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_offer_nsdldate", milestone.offer_nsdldate, DbType.DateTime));
                 parameters.Add(dbManager.CreateParameter("in_offer_cdsldate", milestone.offer_cdsldate, DbType.DateTime));
                 parameters.Add(dbManager.CreateParameter("in_offer_refunddate", milestone.offer_refunddate, DbType.DateTime));
-
                 parameters.Add(dbManager.CreateParameter("in_offer_code", milestone.offer_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_client_code", milestone.client_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_active_status", milestone.active_status, DbType.String));
-
                 parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
-
                 parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
                 parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
-                DataSet ds = dbManager.execStoredProcedure(
-                    "pr_ipo_set_offermilestones",
-                    CommandType.StoredProcedure,
-                    parameters.ToArray()
-                );
+                DataSet ds = dbManager.execStoredProcedure("pr_ipo_set_offermilestones",CommandType.StoredProcedure, parameters.ToArray());
 
                 if (ds != null && ds.Tables.Count > 0)
                 {
