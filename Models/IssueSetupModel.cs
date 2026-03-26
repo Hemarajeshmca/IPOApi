@@ -47,7 +47,7 @@
 
     public class OfferBankerModel
     {
-        public string? action { get; set; }
+        public string? action { get; set; }// add
         public int banker_gid { get; set; }
         public string? banker_type { get; set; }
         public string? banker_name { get; set; }

@@ -14,8 +14,8 @@ using System.Data;
 
 namespace IPOApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("api/[controller]")]
+    //[ApiController]
     public class ReportQueueController : ControllerBase
     {
         private readonly IReportQueueService _reportQueueService;
@@ -32,10 +32,11 @@ namespace IPOApi.Controllers
 
        
         [HttpPost("setReportqueue")]
+ 
         public IActionResult setReportqueue([FromBody] ReportQueueModel.reportqueue objReportqueuemodel)
         {
             //constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
-            IPOApi.Models.UserManagementModel.headerValue header_value = new UserManagementModel.headerValue();
+           UserManagementModel.headerValue header_value = new UserManagementModel.headerValue();
             try
             {
                 string jsonString = JsonConvert.SerializeObject(objReportqueuemodel);
@@ -188,7 +189,8 @@ namespace IPOApi.Controllers
             }
         }
 
-        [HttpPost]
+     
+        [HttpPost("UpdatekoqueueStatus")]
         public string UpdatekoqueueStatus(Int32 koqueue_gid, string koqueue_status, string koqueue_remark, string constring, string user_code)
         {
             try

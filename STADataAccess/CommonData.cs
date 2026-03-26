@@ -240,7 +240,10 @@ namespace IPOApi.STADataAccess
 			string result = parts[1].Trim();
 			errorlogModel objmodel = new errorlogModel();
 			objmodel.in_proc_name = parts[1].Trim();
-			objmodel.in_errorlog_text = parts[2].Trim();
+            if (parts.Length > 2)
+            {
+                objmodel.in_errorlog_text = parts[2].Trim();
+            }
 			objmodel.in_ip_addr = "localhost";
 			objmodel.in_source_name = "SP";
 			objmodel.user_code = "STA";
