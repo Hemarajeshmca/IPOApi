@@ -35,5 +35,27 @@ namespace IPOApi.STADataAccess
             }
         }
 
+        public DataTable GetbidBankdetailData(string offer_code, string bank_code, string constring)
+        {
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_reference_no", offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_bank_code", bank_code, DbType.String));
+                ds = dbManager.execStoredProcedure("pr_get_bid_bank_recon_detail_new", CommandType.StoredProcedure, parameters.ToArray());
+                result = ds.Tables[0];
+                return result;
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_get_bid_bank_recon_detail" + "Error Message:" + ex.Message);
+                return result;
+            }
+        }
+
     }
 }
