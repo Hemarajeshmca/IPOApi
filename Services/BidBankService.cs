@@ -18,5 +18,18 @@ namespace IPOApi.Services
             { }
             return ds;
         }
+
+        public static DataTable GetbidBankdetailService(string offer_code,string bank_code, string constring)
+        {
+            DataTable ds = new DataTable();
+            try
+            {
+                BidBankData objDS = new BidBankData();
+                ds = objDS.GetbidBankdetailData(offer_code, bank_code, constring);
+            }
+            catch (Exception e)
+            { }
+            return ds;
+        }
     }
 }

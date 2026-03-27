@@ -33,5 +33,23 @@ namespace IPOApi.Controllers
             }
 
         }
+
+        [HttpGet("GetbidBankdetail")]
+        public IActionResult GetbidBankdetail(string offer_code, string bank_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataTable response = new DataTable();
+            try
+            {
+                response = BidBankService.GetbidBankdetailService(offer_code, bank_code, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+
+        }
     }
 }
