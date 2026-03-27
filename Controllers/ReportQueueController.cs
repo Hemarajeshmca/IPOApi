@@ -14,8 +14,8 @@ using System.Data;
 
 namespace IPOApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("api/[controller]")]
+    //[ApiController]
     public class ReportQueueController : ControllerBase
     {
         private readonly IReportQueueService _reportQueueService;
