@@ -85,6 +85,7 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_offer_listing", offerheader.offer_listing_no, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_offer_isin", offerheader.offer_isin, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_offer_status", offerheader.offer_status, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_offer_empdiscount", offerheader.offer_empdiscount, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_offer_remarks", offerheader.offer_remarks, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_client_code", offerheader.client_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_active_status", offerheader.active_status, DbType.String));
