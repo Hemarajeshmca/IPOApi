@@ -32,7 +32,27 @@ namespace IPOApi.STADataAccess
             }
         }
 
-      
+        public DataSet GetboaReportData(string offer_code, string constring)
+        {
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_ipo_code", offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", "", DbType.String));
+                ds = dbManager.execStoredProcedure("pr_ipo_get_boa_report", CommandType.StoredProcedure, parameters.ToArray());
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_ipo_get_boa_report" + "Error Message:" + ex.Message);
+                return ds;
+            }
+        }
+
 
     }
 }

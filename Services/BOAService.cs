@@ -18,7 +18,19 @@ namespace IPOApi.Services
             { }
             return ds;        }
 
-      
+        public static DataSet GetboaReportService(string offer_code, string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                BOAData objDS = new BOAData();
+                ds = objDS.GetboaReportData(offer_code, constring);
+            }
+            catch (Exception e)
+            { }
+            return ds;
+        }
+
 
     }
 }
