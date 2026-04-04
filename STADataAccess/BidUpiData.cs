@@ -23,7 +23,7 @@ namespace IPOApi.STADataAccess
                 //parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
                 //parameters.Add(dbManager.CreateParameter("in_role_code", headerval.role_code, DbType.String));
                 //parameters.Add(dbManager.CreateParameter("in_lang_code", headerval.lang_code, DbType.String));
-                ds = dbManager.execStoredProcedure("pr_get_bid_bank_recon", CommandType.StoredProcedure, parameters.ToArray());
+                ds = dbManager.execStoredProcedure("pr_get_bid_upi_recon", CommandType.StoredProcedure, parameters.ToArray());
                 result = ds.Tables[0];
                 return result;
             }
