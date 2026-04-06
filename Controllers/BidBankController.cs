@@ -49,7 +49,6 @@ namespace IPOApi.Controllers
             {
                 return Problem(title: e.Message);
             }
-
         }
     }
 }
