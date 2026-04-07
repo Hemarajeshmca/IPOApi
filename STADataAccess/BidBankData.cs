@@ -56,6 +56,5 @@ namespace IPOApi.STADataAccess
                 return result;
             }
         }
-
     }
 }
