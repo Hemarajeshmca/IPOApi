@@ -29,8 +29,20 @@ namespace IPOApi.Services
             catch (Exception e)
             { }
             return ds;
+        }                  
+
+
+        public static DataSet GetMomReportService(string offer_code, string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                BOAData objDS = new BOAData();
+                ds = objDS.GetMomReportData(offer_code,constring);
+            }
+            catch (Exception e)
+            { }
+            return ds;
         }
-
-
     }
 }
