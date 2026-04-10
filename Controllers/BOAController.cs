@@ -48,6 +48,23 @@ namespace IPOApi.Controllers
                 return Problem(title: e.Message);
             }
 
+        }        
+
+        [HttpGet("getMomReports")]
+        public IActionResult getMomReports(string offer_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = BOAService.GetMomReportService(offer_code,constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
         }
 
     }

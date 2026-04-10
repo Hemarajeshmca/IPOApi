@@ -51,8 +51,27 @@ namespace IPOApi.STADataAccess
                 objlog.logger("SP:pr_ipo_get_boa_report" + "Error Message:" + ex.Message);
                 return ds;
             }
-        }
+        }        
 
+        public DataSet GetMomReportData(string offer_code, string constring)
+        {
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("p_offer_code", offer_code, DbType.String));
+                ds = dbManager.execStoredProcedure("pr_get_mom_reports", CommandType.StoredProcedure, parameters.ToArray());                
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_get_mom_reports" + "Error Message:" + ex.Message);
+                return null;
+            }
+        }
 
     }
 }
