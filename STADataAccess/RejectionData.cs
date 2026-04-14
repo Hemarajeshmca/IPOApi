@@ -19,8 +19,8 @@ namespace IPOApi.STADataAccess
                 Dictionary<string, Object> values = new Dictionary<string, object>();
                 MySqlDataAccess con = new MySqlDataAccess("");
                 parameters = new List<IDbDataParameter>();
-                parameters.Add(dbManager.CreateParameter("in_ipo_code", offer_code, DbType.String));              
-                ds = dbManager.execStoredProcedure("pr_ipo_get_rejection", CommandType.StoredProcedure, parameters.ToArray());
+                parameters.Add(dbManager.CreateParameter("in_reference_no", offer_code, DbType.String));              
+                ds = dbManager.execStoredProcedure("pr_ipo_get_rejection_count", CommandType.StoredProcedure, parameters.ToArray());
                 result = ds.Tables[0];
                 return result;
             }
