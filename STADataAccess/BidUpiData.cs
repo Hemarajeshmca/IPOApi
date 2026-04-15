@@ -3,7 +3,7 @@ using System.Data;
 
 namespace IPOApi.STADataAccess
 {
-    public class BidBankData
+    public class BidUpiData
     {
         DataSet ds = new DataSet();
         List<IDbDataParameter>? parameters;
@@ -11,7 +11,7 @@ namespace IPOApi.STADataAccess
         string constring1 = "";
         DataTable result = new DataTable();
 
-        public DataTable GetbidBankData(string offer_code, string constring)
+        public DataTable GetbidUpiData(string offer_code, string constring)
         {
             try
             {
@@ -23,7 +23,7 @@ namespace IPOApi.STADataAccess
                 //parameters.Add(dbManager.CreateParameter("in_user_code", headerval.user_code, DbType.String));
                 //parameters.Add(dbManager.CreateParameter("in_role_code", headerval.role_code, DbType.String));
                 //parameters.Add(dbManager.CreateParameter("in_lang_code", headerval.lang_code, DbType.String));
-                ds = dbManager.execStoredProcedure("pr_get_bid_bank_recon", CommandType.StoredProcedure, parameters.ToArray());
+                ds = dbManager.execStoredProcedure("pr_get_bid_upi_recon", CommandType.StoredProcedure, parameters.ToArray());
                 result = ds.Tables[0];
                 return result;
             }
@@ -56,5 +56,6 @@ namespace IPOApi.STADataAccess
                 return result;
             }
         }
+
     }
 }
