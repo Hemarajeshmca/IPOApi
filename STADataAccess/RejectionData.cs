@@ -11,7 +11,7 @@ namespace IPOApi.STADataAccess
         string constring1 = "";
         DataTable result = new DataTable();
 
-        public DataTable GetRejData(string offer_code, string constring)
+        public DataTable GetRejData(string offer_code, bool runRule, string constring)
         {
             try
             {
@@ -19,7 +19,8 @@ namespace IPOApi.STADataAccess
                 Dictionary<string, Object> values = new Dictionary<string, object>();
                 MySqlDataAccess con = new MySqlDataAccess("");
                 parameters = new List<IDbDataParameter>();
-                parameters.Add(dbManager.CreateParameter("in_reference_no", offer_code, DbType.String));              
+                parameters.Add(dbManager.CreateParameter("in_reference_no", offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_runRule", runRule, DbType.Boolean));
                 ds = dbManager.execStoredProcedure("pr_ipo_get_rejection_count", CommandType.StoredProcedure, parameters.ToArray());
                 result = ds.Tables[0];
                 return result;
@@ -50,6 +51,29 @@ namespace IPOApi.STADataAccess
             {
                 CommonHeader objlog = new CommonHeader();
                 objlog.logger("SP:pr_get_bid_bank_recon_detail" + "Error Message:" + ex.Message);
+                return result;
+            }
+        }
+
+        // runRejectionData
+
+        public DataTable runRejectionData(string offer_code, string constring)
+        {
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_ipo_code", offer_code, DbType.String));
+                ds = dbManager.execStoredProcedure("pr_run_boa", CommandType.StoredProcedure, parameters.ToArray());
+                result = ds.Tables[0];
+                return result;
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_run_boa" + "Error Message:" + ex.Message);
                 return result;
             }
         }
