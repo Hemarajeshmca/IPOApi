@@ -42,14 +42,14 @@ namespace IPOApi.STADataAccess
                 parameters = new List<IDbDataParameter>();
                 parameters.Add(dbManager.CreateParameter("in_reference_no", offer_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_rule_code", rule_code, DbType.String));
-                ds = dbManager.execStoredProcedure("pr_get_bid_bank_recon_detail_new", CommandType.StoredProcedure, parameters.ToArray());
+                ds = dbManager.execStoredProcedure("pr_get_reject_recon_detail", CommandType.StoredProcedure, parameters.ToArray());
                 result = ds.Tables[0];
                 return result;
             }
             catch (Exception ex)
             {
                 CommonHeader objlog = new CommonHeader();
-                objlog.logger("SP:pr_get_bid_bank_recon_detail" + "Error Message:" + ex.Message);
+                objlog.logger("SP:pr_get_reject_recon_detail" + "Error Message:" + ex.Message);
                 return result;
             }
         }
