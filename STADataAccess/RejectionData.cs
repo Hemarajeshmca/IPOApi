@@ -11,7 +11,8 @@ namespace IPOApi.STADataAccess
         string constring1 = "";
         DataTable result = new DataTable();
 
-        public DataTable GetRejData(string offer_code, bool runRule, string constring)
+
+        public DataTable GetRejData(string offer_code, string constring)
         {
             try
             {
