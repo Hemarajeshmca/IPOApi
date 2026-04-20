@@ -17,13 +17,13 @@ namespace IPOApi.Controllers
         string constring = "";
 
         [HttpGet("getRejReason")]
-        public IActionResult getRejReason(string offer_code)
+        public IActionResult getRejReason(string offer_code, bool runRule)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             DataTable response = new DataTable();
             try
             {
-                response = RejectionService.GetRejService(offer_code, constring);
+                response = RejectionService.GetRejService(offer_code, runRule, constring);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }
@@ -51,5 +51,25 @@ namespace IPOApi.Controllers
             }
 
         }
+
+        // runRejection
+        [HttpGet("runRejection")]
+        public IActionResult runRejection(string offer_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataTable response = new DataTable();
+            try
+            {
+                response = RejectionService.runRejectionService(offer_code, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+
+        }
+
     }
 }
