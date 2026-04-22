@@ -18,6 +18,19 @@ namespace IPOApi.Services
             { }
             return ds;
         }
-       
+
+        public static DataTable getBidUpidetailService(string offer_code, string bank_code, string constring)
+        {
+            DataTable ds = new DataTable();
+            try
+            {
+                BidUpiData objDS = new BidUpiData();
+                ds = objDS.getBidUpidetailData(offer_code, bank_code, constring);
+            }
+            catch (Exception e)
+            { }
+            return ds;
+        }
+
     }
 }

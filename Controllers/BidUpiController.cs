@@ -31,5 +31,22 @@ namespace IPOApi.Controllers
             }
 
         }
+
+        [HttpGet("getBidUpidetail")]
+        public IActionResult getBidUpidetail(string offer_code, string bank_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataTable response = new DataTable();
+            try
+            {
+                response = BidUpiService.getBidUpidetailService(offer_code, bank_code, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
     }
 }
