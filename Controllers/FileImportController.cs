@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Data;
+//using IPOApi.Models;
+using static IPOApi.Models.UtilityModel;
 
 namespace IPOApi.Controllers
 {
@@ -25,6 +27,23 @@ namespace IPOApi.Controllers
             try
             {
                 response = objData.getBank(constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("fileinfo")]
+        public IActionResult fileinfo([FromBody] FileInfoRequest fileInfo)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = objData.getJobinfo(fileInfo, constring);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }

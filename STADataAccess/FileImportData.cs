@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Common;
 using System.Data;
 using static System.Net.WebRequestMethods;
+using static IPOApi.Models.UtilityModel;
 
 namespace IPOApi.STADataAccess
 {
@@ -36,5 +37,27 @@ namespace IPOApi.STADataAccess
             return ds; // Return the DataSet with results
         }
 
+        public DataSet getJobinfo(FileInfoRequest fileinfo, string constring)
+        {
+            try
+            {
+                constring1 = constring;
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_ipo_code", fileinfo.ipo_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_dataset_code", fileinfo.dataset_code, DbType.String));
+                ds = dbManager.execStoredProcedure("pr_ipo_get_datasetjob", CommandType.StoredProcedure, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_ipo_get_datasetjob" + " Error Message:" + ex.Message);
+            }
+
+            return ds;
+
+        }
     }
 }

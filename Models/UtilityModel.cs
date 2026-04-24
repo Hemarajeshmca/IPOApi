@@ -33,5 +33,11 @@ namespace IPOApi.Models
             public string? in_user_code { get; set; }
 
         }
+
+        public class FileInfoRequest
+        {
+            public string ipo_code { get; set; }
+            public string dataset_code { get; set; }
+        }
     }
 }
