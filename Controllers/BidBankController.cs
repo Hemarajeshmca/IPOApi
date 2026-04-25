@@ -50,5 +50,54 @@ namespace IPOApi.Controllers
                 return Problem(title: e.Message);
             }
         }
+
+        [HttpGet("getBankDetails")]
+        public IActionResult getBankDetails(string offer_code)
+        {
+            try
+            {
+                constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+
+                var ds = BidBankService.GetBankDetailService(offer_code, constring);
+
+                var summary = ConvertToList<BankData>(ds.Tables[0]);
+                var banker = ConvertToList<BankerData>(ds.Tables[1]);
+
+                return Ok(new
+                {
+                    summary,
+                    banker
+                });
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        private List<T> ConvertToList<T>(DataTable dt)
+        {
+            var json = JsonConvert.SerializeObject(dt);
+            return JsonConvert.DeserializeObject<List<T>>(json);
+        }
+
+        public class BankData
+        {
+            public string bank_code { get; set; }
+            public string bank_name { get; set; }
+            public string client_name { get; set; }
+            public long total_amount { get; set; }
+            public long allocated_block_amount { get; set; }
+            public long unblocked_amount { get; set; }
+        }
+
+        public class BankerData
+        {
+            public string bank_code { get; set; }
+            public string bank_name { get; set; }
+            public string banker_address { get; set; }
+            public string banker_accountno { get; set; }
+            public string banker_ifsc { get; set; }
+        }
     }
 }

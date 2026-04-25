@@ -56,5 +56,30 @@ namespace IPOApi.STADataAccess
                 return result;
             }
         }
+
+        public DataSet GetBankDetailData(string offer_code, string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("p_offer_code", offer_code, DbType.String));
+
+                ds = dbManager.execStoredProcedure(
+                    "pr_get_bank_pdf_details",
+                    CommandType.StoredProcedure,
+                    parameters.ToArray()
+                );
+
+                return ds; // ✅ return full dataset
+            }
+            catch (Exception ex)
+            {
+                new CommonHeader().logger("SP Error: " + ex.Message);
+                return ds;
+            }
+        }
     }
 }
