@@ -31,5 +31,11 @@ namespace IPOApi.Services
             { }
             return ds;
         }
+
+        public static DataSet GetBankDetailService(string offer_code, string constring)
+        {
+            BidBankData objDS = new BidBankData();
+            return objDS.GetBankDetailData(offer_code, constring);
+        }
     }
 }
