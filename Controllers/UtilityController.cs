@@ -93,7 +93,7 @@ namespace STAapi.Controllers
 
 
 		[HttpPost("jobinpogress")]
-		public IActionResult jobinpogress(JobCompleted objJobCompleted)
+		public IActionResult jobinpogress([FromBody] JobInprogress objJobCompleted)
 		{
 			constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
 			headerValue header_value = new headerValue();
@@ -117,7 +117,7 @@ namespace STAapi.Controllers
 		}
 
         [HttpPost("jobinQueue")]
-        public IActionResult jobinQueue(JobCompleted objJobCompleted)
+        public IActionResult jobinQueue([FromBody] JobCompleted objJobCompleted)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             headerValue header_value = new headerValue();

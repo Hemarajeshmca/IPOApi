@@ -34,6 +34,25 @@ namespace IPOApi.Middleware
         //}
         public async Task Invoke(HttpContext context)
         {
+
+            var endpoint = context.GetEndpoint();
+
+            // Respect [AllowAnonymous]
+            if (endpoint?.Metadata?.GetMetadata<IAllowAnonymous>() != null)
+            {
+                await _next(context);
+                return;
+            }
+
+            var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+            if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
+            {
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                await context.Response.WriteAsync("Missing or invalid Authorization header");
+                return;
+            }
+
             var path = context.Request.Path.Value?.ToLower();
 
             // ✅ SKIP TOKEN VALIDATION FOR FIRST LOGIN & PRE-TOKEN
@@ -43,19 +62,20 @@ namespace IPOApi.Middleware
                 path.Contains("/auth/login") ||
                 //path.Contains("/userslist") ||
                 //path.Contains("/usergroups") ||  
-                path.Contains("/rolemapping")) 
+                path.Contains("/rolemapping") ||
+                path.Contains("/reportScheduler")) 
             {
                 await _next(context);
                 return;
             }
-            var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+            // var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
 
-            if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
-            {
-                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                await context.Response.WriteAsync("Missing or invalid Authorization header");
-                return;
-            }
+            //if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
+            //{
+            //    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            //    await context.Response.WriteAsync("Missing or invalid Authorization header");
+            //    return;
+            //}
 
             var oldToken = authHeader.Substring("Bearer ".Length).Trim();
             var key = Encoding.UTF8.GetBytes(_config["Jwt:Key"]);

@@ -16,6 +16,7 @@ namespace IPOApi.Controllers
 {
     //[Route("api/[controller]")]
     //[ApiController]
+
     public class ReportQueueController : ControllerBase
     {
         private readonly IReportQueueService _reportQueueService;
@@ -94,6 +95,7 @@ namespace IPOApi.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost("reportScheduler")]
         public IActionResult Reportscheduler()
         {
@@ -109,77 +111,78 @@ namespace IPOApi.Controllers
                 header_value.user_code = getvalue;
                 header_value.lang_code = getlangCode;
                 header_value.role_code = getRoleCode;
-                response = _reportQueueService.getReportqueueservice(header_value);
-                if (Convert.ToInt32(response.Rows[0]["koqueue_gid"]) > 0)
-                {
-                    koqueue_gid = Convert.ToInt32(response.Rows[0]["koqueue_gid"]);
-                    UpdatekoqueueStatus(koqueue_gid, "P", "Inprocess", constring, header_value.user_code);
-                    scheduled_by = Convert.ToString(response.Rows[0]["scheduled_by"]);
-                    header_value.user_code = scheduled_by;
-                    var koQuery = Convert.ToString(response.Rows[0]["ko_query"]);
-                    bool hasDataset1 = koQuery.Contains("\"Dataset1\"", StringComparison.OrdinalIgnoreCase);
-
-                    if (Convert.ToString(response.Rows[0]["queue_type"]) == "Report")
+                response = _reportQueueService.getReportqueueservice(header_value);              
+                    if (response != null &&
+                     response.Rows.Count > 0 && Convert.ToInt32(response.Rows[0]["koqueue_gid"]) > 0)
                     {
-                        if (hasDataset1)
+                        koqueue_gid = Convert.ToInt32(response.Rows[0]["koqueue_gid"]);
+                        UpdatekoqueueStatus(koqueue_gid, "P", "Inprocess", constring, header_value.user_code);
+                        scheduled_by = Convert.ToString(response.Rows[0]["scheduled_by"]);
+                        header_value.user_code = scheduled_by;
+                        var koQuery = Convert.ToString(response.Rows[0]["ko_query"]);
+                        bool hasDataset1 = koQuery.Contains("\"Dataset1\"", StringComparison.OrdinalIgnoreCase);
+                        if (Convert.ToString(response.Rows[0]["queue_type"]) == "Report")
                         {
-                            ReportModel.ReportDataModel objDataModel = JsonConvert.DeserializeObject<ReportModel.ReportDataModel>(Convert.ToString(response.Rows[0]["ko_query"]));
-                            if (objDataModel?.Dataset1 != null)
+                            if (hasDataset1)
                             {
-                                List<ReportQueueModel.reportqueue> objReportqueuemodel =
-                                JsonConvert.DeserializeObject<List<ReportQueueModel.reportqueue>>(objDataModel.Dataset1);
+                                ReportModel.ReportDataModel objDataModel = JsonConvert.DeserializeObject<ReportModel.ReportDataModel>(Convert.ToString(response.Rows[0]["ko_query"]));
+                                if (objDataModel?.Dataset1 != null)
+                                {
+                                    List<ReportQueueModel.reportqueue> objReportqueuemodel =
+                                    JsonConvert.DeserializeObject<List<ReportQueueModel.reportqueue>>(objDataModel.Dataset1);
 
-                                if (objReportqueuemodel != null)
+                                    if (objReportqueuemodel != null)
+                                    {
+
+                                        if (objReportqueuemodel[0].in_outputfile_type.ToLower() == "xlsx")
+                                        {
+                                            ReportService.generatedynamicReportservice_new(objDataModel, constring, header_value);
+                                        }
+                                        else if (objReportqueuemodel[0].in_outputfile_type.ToLower() == "csv")
+                                        {
+                                            ReportService.generatedynamicReportservice_new(objDataModel, constring, header_value);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                ReportModel.generatedynamicReport_typeCmodel objReportqueuemodel1 = JsonConvert.DeserializeObject<ReportModel.generatedynamicReport_typeCmodel>(Convert.ToString(response.Rows[0]["ko_query"]));
+                                ReportModel.generatedynamicReportmodel objReportqueuemodel = JsonConvert.DeserializeObject<ReportModel.generatedynamicReportmodel>(Convert.ToString(response.Rows[0]["ko_query"]));
+                                if (objReportqueuemodel != null && objReportqueuemodel.in_reporttemplate_code == "")
                                 {
 
-                                    if (objReportqueuemodel[0].in_outputfile_type.ToLower() == "xlsx")
+                                    if (objReportqueuemodel.in_outputfile_type.ToLower() == "xlsx")
                                     {
-                                        ReportService.generatedynamicReportservice_new(objDataModel, constring, header_value);
+                                        ReportService.generatedynamicReportservice(objReportqueuemodel, constring, header_value);
                                     }
-                                    else if (objReportqueuemodel[0].in_outputfile_type.ToLower() == "csv")
+                                    else if (objReportqueuemodel.in_outputfile_type.ToLower() == "csv")
                                     {
-                                        ReportService.generatedynamicReportservice_new(objDataModel, constring, header_value);
+                                        ReportService.generatedynamicReportservice(objReportqueuemodel, constring, header_value);
                                     }
+                                }
+                                else if (objReportqueuemodel1 != null)
+                                {
+
+                                    if (objReportqueuemodel1.in_outputfile_type.ToLower() == "xlsx")
+                                    {
+                                        ReportService.generatedynamicReport_typeCservice(objReportqueuemodel1, constring, header_value);
+                                    }
+                                    else if (objReportqueuemodel.in_outputfile_type.ToLower() == "csv")
+                                    {
+                                        ReportService.generatedynamicReportservice(objReportqueuemodel, constring, header_value);
+                                    }
+
                                 }
                             }
                         }
-                        else
-                        {
-                            ReportModel.generatedynamicReport_typeCmodel objReportqueuemodel1 = JsonConvert.DeserializeObject<ReportModel.generatedynamicReport_typeCmodel>(Convert.ToString(response.Rows[0]["ko_query"]));
-                            ReportModel.generatedynamicReportmodel objReportqueuemodel = JsonConvert.DeserializeObject<ReportModel.generatedynamicReportmodel>(Convert.ToString(response.Rows[0]["ko_query"]));
-                            if (objReportqueuemodel != null && objReportqueuemodel.in_reporttemplate_code == "")
-                            {
-
-                                if (objReportqueuemodel.in_outputfile_type.ToLower() == "xlsx")
-                                {
-                                    ReportService.generatedynamicReportservice(objReportqueuemodel, constring, header_value);
-                                }
-                                else if (objReportqueuemodel.in_outputfile_type.ToLower() == "csv")
-                                {
-                                    ReportService.generatedynamicReportservice(objReportqueuemodel, constring, header_value);
-                                }
-                            }
-                            else if (objReportqueuemodel1 != null)
-                            {
-
-                                if (objReportqueuemodel1.in_outputfile_type.ToLower() == "xlsx")
-                                {
-                                    ReportService.generatedynamicReport_typeCservice(objReportqueuemodel1, constring, header_value);
-                                }
-                                else if (objReportqueuemodel.in_outputfile_type.ToLower() == "csv")
-                                {
-                                    ReportService.generatedynamicReportservice(objReportqueuemodel, constring, header_value);
-                                }
-
-                            }
-                        }
+                        UpdatekoqueueStatus(koqueue_gid, "C", "Completed", constring, header_value.user_code);
                     }
-                    UpdatekoqueueStatus(koqueue_gid, "C", "Completed", constring, header_value.user_code);
-                }
-                else
-                {
+                    else
+                    {
 
-                }
+                    }
+                //}
                 return Ok();
             }
             catch (Exception e)
