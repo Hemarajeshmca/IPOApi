@@ -44,5 +44,19 @@ namespace IPOApi.Services
             { }
             return ds;
         }
+
+        public static DataSet Export_allotment(string offer_code, string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                BOAData objDS = new BOAData();
+                ds = objDS.Export_allotment(offer_code, constring);
+            }
+            catch (Exception e)
+            { }
+            return ds;
+        }
+
     }
 }
