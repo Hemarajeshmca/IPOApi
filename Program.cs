@@ -101,6 +101,7 @@ app.UseHttpsRedirection();
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseRouting();
 app.UseCors("DefaultCors");
+app.UseAuthentication();   
 app.UseMiddleware<JwtAuthorizationMiddleware>();
 //app.UseCors(x => x
 //				.AllowAnyOrigin()

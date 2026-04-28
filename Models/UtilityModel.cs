@@ -39,5 +39,14 @@ namespace IPOApi.Models
             public string ipo_code { get; set; }
             public string dataset_code { get; set; }
         }
+
+        public class JobInprogress
+        {
+            public String? in_start_date { get; set; }
+            public String? in_end_date { get; set; }
+            public String? in_jobtype_code { get; set; }
+            public string? in_user_code { get; set; }
+
+        }
     }
 }

@@ -100,7 +100,7 @@ namespace IPOApi.STADataAccess
 		}
 		//jobinpogressservice
 
-		public static DataTable jobinpogressservice(JobCompleted objJobCompleted, headerValue headerval, string constring)
+		public static DataTable jobinpogressservice(JobInprogress objJobCompleted, headerValue headerval, string constring)
 		{
 			DataTable ds = new DataTable();
 			try

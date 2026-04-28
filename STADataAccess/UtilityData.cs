@@ -96,7 +96,7 @@ namespace IPOApi.STADataAccess
 			}
 		}
 
-		public DataTable jobinpogressData(JobCompleted objJobCompleted, headerValue headerval, string constring)
+		public DataTable jobinpogressData(JobInprogress objJobCompleted, headerValue headerval, string constring)
 		{
 			try
 			{
