@@ -67,14 +67,14 @@ namespace IPOApi.Controllers
             }
         }
 
-        [HttpGet("Export_allotment")]
-        public IActionResult Export_allotment(string offer_code)
+        [HttpGet("Export_allotment_bo")]
+        public IActionResult Export_allotment_bo(string offer_code)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             DataSet response = new DataSet();
             try
             {
-                response = BOAService.Export_allotment(offer_code, constring);
+                response = BOAService.Export_allotment_bo(offer_code, constring);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }
