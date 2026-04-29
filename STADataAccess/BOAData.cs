@@ -73,7 +73,7 @@ namespace IPOApi.STADataAccess
             }
         }
 
-        public DataSet Export_allotment(string offer_code, string constring)
+        public DataSet Export_allotment_bo(string offer_code, string constring)
         {
             try
             {
@@ -92,6 +92,5 @@ namespace IPOApi.STADataAccess
                 return null;
             }
         }
-
     }
 }
