@@ -37,5 +37,13 @@ namespace IPOApi.Services
             BidBankData objDS = new BidBankData();
             return objDS.GetBankDetailData(offer_code, constring);
         }
+
+        // getdetaildifferenceSummary
+
+        public static DataSet getdetaildifferenceService(string offer_code, string user_code, string constring)
+        {
+            BidBankData objDS = new BidBankData();
+            return objDS.getdetaildifferenceData(offer_code, user_code, constring);
+        }
     }
 }

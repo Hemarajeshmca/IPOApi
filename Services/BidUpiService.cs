@@ -32,5 +32,11 @@ namespace IPOApi.Services
             return ds;
         }
 
+        //getUPIdifferenceSummaryService
+        public static DataSet getUPIdifferenceSummaryService(string offer_code, string user_code, string constring)
+        {
+            BidUpiData objDS = new BidUpiData();
+            return objDS.getUPIdifferenceSummaryeData(offer_code, user_code, constring);
+        }
     }
 }

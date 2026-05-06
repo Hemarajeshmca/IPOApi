@@ -48,5 +48,25 @@ namespace IPOApi.Controllers
                 return Problem(title: e.Message);
             }
         }
+
+        [HttpGet("getUPIdifferenceSummary")]
+        public IActionResult getUPIdifferenceSummary(string offer_code, string user_code)
+        {
+            DataSet response = new DataSet();
+            try
+            {
+                constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+
+                response = BidUpiService.getUPIdifferenceSummaryService(offer_code, user_code, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+
     }
 }
