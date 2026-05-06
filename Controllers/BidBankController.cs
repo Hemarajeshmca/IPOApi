@@ -75,6 +75,29 @@ namespace IPOApi.Controllers
             }
         }
 
+        // getdetaildifferenceSummary
+
+        [HttpGet("getdetaildifferenceSummary")]
+        public IActionResult getdetaildifferenceSummary(string offer_code, string user_code)
+        {
+            DataSet response = new DataSet();
+            try
+            {
+                constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+
+                response = BidBankService.getdetaildifferenceService(offer_code, user_code, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+                //var difference = ConvertToList<BankerData>(ds.Tables[1]);
+                //return Ok(new{difference});
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+
         private List<T> ConvertToList<T>(DataTable dt)
         {
             var json = JsonConvert.SerializeObject(dt);

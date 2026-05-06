@@ -81,5 +81,34 @@ namespace IPOApi.STADataAccess
                 return ds;
             }
         }
+
+        // getdetaildifference
+
+        public DataSet getdetaildifferenceData(string offer_code, string user_code, string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_reference_no", offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", user_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("out_msg", "out", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_result", "out", DbType.String, ParameterDirection.Output));
+                ds = dbManager.execStoredProcedure(
+                    "pr_ipo_get_bidbank_difference",
+                    CommandType.StoredProcedure,
+                    parameters.ToArray()
+                );
+
+                return ds; 
+            }
+            catch (Exception ex)            {
+                new CommonHeader().logger("SP Error: " + ex.Message);
+                return ds;
+            }
+        }
+
     }
 }
