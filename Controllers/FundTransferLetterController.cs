@@ -1,7 +1,9 @@
-﻿using IPOApi.Services;
+﻿using ClosedXML.Excel;
+using IPOApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Data;
+using System.IO.Compression;
 
 namespace IPOApi.Controllers
 {
@@ -57,10 +59,68 @@ namespace IPOApi.Controllers
             }
         }
 
+        [HttpGet("Fund_Transfer_bank_details")]
+        public IActionResult Fund_Transfer_bank_details(string offer_code)
+        {
+            try
+            {
+                constring = _configuration
+                    .GetSection("Appsettings")["ConnectionStrings"]
+                    .ToString();
+
+                DataSet ds =
+                    FundTransferLetterService
+                    .Fund_Transfer_bank_details(
+                        offer_code,
+                        constring);
+
+                List<ExcelFileModel> files =
+                    new List<ExcelFileModel>();
+
+                foreach (DataTable dt in ds.Tables)
+                {
+                    using XLWorkbook wb =
+                        new XLWorkbook();
+
+                    wb.Worksheets.Add(dt, "Statement");
+
+                    using MemoryStream ms =
+                        new MemoryStream();
+
+                    wb.SaveAs(ms);
+
+                    string safeTableName =
+                        string.IsNullOrWhiteSpace(dt.TableName)
+                        ? "Bank_" + Guid.NewGuid()
+                        : string.Join("_",
+                            dt.TableName.Split(
+                                Path.GetInvalidFileNameChars()));
+
+                    files.Add(new ExcelFileModel
+                    {
+                        FileName = safeTableName + ".xlsx",
+                        Content = ms.ToArray()
+                    });
+                }
+
+                return Ok(files);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
         private List<T> ConvertToList<T>(DataTable dt)
         {
             var json = JsonConvert.SerializeObject(dt);
             return JsonConvert.DeserializeObject<List<T>>(json);
+        }
+
+        public class ExcelFileModel
+        {
+            public string FileName { get; set; }
+            public byte[] Content { get; set; }
         }
 
         public class NSBBankData

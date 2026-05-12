@@ -25,5 +25,11 @@ namespace IPOApi.Services
             return ds;
         }
 
+        public static DataSet Fund_Transfer_bank_details(string offer_code, string constring)
+        {
+            FundTransferLetterData objDS = new FundTransferLetterData();
+            return objDS.Fund_Transfer_bank_details(offer_code, constring);
+        }
+
     }
 }
