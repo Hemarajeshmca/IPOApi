@@ -55,5 +55,66 @@ namespace IPOApi.STADataAccess
             }
         }
 
+        public DataSet Fund_Transfer_bank_details(string offer_code, string constring)
+        {
+            DataSet ds = new DataSet();
+            DataSet dsloop = new DataSet();
+            DataTable finalTable = new DataTable();
+            DataSet finalDataSet = new DataSet();
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_ipo_code", offer_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_bank_code", "", DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_flag", "code", DbType.String));
+
+                ds = dbManager.execStoredProcedure(
+                    "pr_get_bank_pdf_list",
+                    CommandType.StoredProcedure,
+                    parameters.ToArray()
+                );
+                // CHECK TABLE EXISTS
+                if (ds.Tables.Count == 0 ||
+                    ds.Tables[0].Rows.Count == 0)
+                {
+                    return finalDataSet;
+                }
+
+                string bankcode = "";
+                string bank_name = "";
+
+                // LOOP ALL BANK CODES
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    bankcode = ds.Tables[0].Rows[i]["BankCode"].ToString();
+                    bank_name = ds.Tables[0].Rows[i]["bank_name"].ToString();
+                    parameters = new List<IDbDataParameter>();
+                    parameters.Add(dbManager.CreateParameter("in_ipo_code", offer_code, DbType.String));
+                    parameters.Add(dbManager.CreateParameter("in_bank_code", bankcode, DbType.String));
+                    parameters.Add(dbManager.CreateParameter("in_flag", "all", DbType.String));
+                    dsloop = dbManager.execStoredProcedure("pr_get_bank_pdf_list",
+                        CommandType.StoredProcedure, parameters.ToArray());
+
+                    // MERGE DATA
+                    if (dsloop.Tables.Count > 0 &&
+                        dsloop.Tables[0].Rows.Count > 0)
+                    {                      
+
+                        DataTable dt = dsloop.Tables[0].Copy();
+                        dt.TableName = bank_name;
+                        finalDataSet.Tables.Add(dt);
+                    }
+                }
+                return finalDataSet; // ✅ return full dataset
+            }
+            catch (Exception ex)
+            {
+                new CommonHeader().logger("SP Error:pr_get_bank_pdf_list  " + ex.Message);
+                return finalDataSet;
+            }
+        }
+
     }
 }
