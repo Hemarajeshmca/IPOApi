@@ -52,5 +52,23 @@ namespace IPOApi.Controllers
                 return Problem(title: e.Message);
             }
         }
+
+        [HttpGet("getdatasetPipeline")]
+        public IActionResult getdatasetPipeline(string Pipeline_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = objData.getdatasetPipelineData(Pipeline_code, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
     }
 }

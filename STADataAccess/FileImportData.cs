@@ -59,5 +59,27 @@ namespace IPOApi.STADataAccess
             return ds;
 
         }
+
+        // getdatasetPipelineService
+        public DataSet getdatasetPipelineData(string Pipeline_code, string constring)
+        {
+            try
+            {
+                constring1 = constring;
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_pipeline_code", Pipeline_code, DbType.String));
+                ds = dbManager.execStoredProcedure("pr_ipo_get_datasetpipeline", CommandType.StoredProcedure, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_ipo_get_datasetpipeline" + " Error Message:" + ex.Message);
+            }
+            return ds;
+        }
+
     }
 }
