@@ -2,7 +2,9 @@
 using IPOApi;
 using IPOApi.Controllers;
 using IPOApi.Middleware;
+using IPOApi.Services;
 using IPOApi.Services.Interface;
+using IPOApi.STADataAccess;
 using IPOApi.STADataAccess.Interface;
 using ReconDataLayer;
 using ReconServiceLayer;
@@ -40,6 +42,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 builder.Services.AddScoped<IReportQueueService, ReportQueueService>();
 builder.Services.AddScoped<IReportQueueData, ReportQueueData>();
+builder.Services.AddScoped<EmailData>();
+builder.Services.AddScoped<EmailService>();
 builder.Services.AddAuthorization();
 builder.Services.AddSwaggerGen(c =>
 {
