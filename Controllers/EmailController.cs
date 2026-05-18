@@ -1,0 +1,43 @@
+﻿using IPOApi.Services;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Data;
+
+namespace IPOApi.Controllers
+{
+    public class EmailController : Controller
+    {
+        private IConfiguration _configuration;
+        private readonly EmailService _service;
+        public EmailController(IConfiguration configuration, EmailService service)
+        {
+            _configuration = configuration;
+            _service = service;
+        }
+        string constring = "";
+
+        [HttpGet("sendIPOMails")]
+        public async Task<IActionResult> SendIpoEmails(string offer_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+           // DataTable response = new DataTable();
+            try
+            {
+                var response = await _service.ProcessBulkEmails(offer_code, constring);
+                return Ok(new
+                {
+                    status = "success",
+                    message = response
+                });
+                //var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                //return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+
+    }
+}
