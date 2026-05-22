@@ -235,7 +235,8 @@ namespace IPOApi.STADataAccess
         public void logger(string sMessage)
 		{
             //string logFilePath = "E:\\Mangai\\GNSA\\Registration\\IPOApi\\Logs\\error.log"; // "D:\\DMS Error Log\\error.log";
-            string logFilePath = "D:\\Billing\\STABillingAPI\\Logs\\error.log";
+            // string logFilePath = "D:\\Billing\\STABillingAPI\\Logs\\error.log";
+            string logFilePath = "/flexicode/IPO_Files/Logs/error.log";
             string[] parts = sMessage.Split(new string[] { "SP:", "Message:" }, StringSplitOptions.None);
 			string result = parts[1].Trim();
 			errorlogModel objmodel = new errorlogModel();
