@@ -31,10 +31,7 @@ namespace IPOApi.Services
 
         public async Task<string> ProcessBulkEmails(string offerCode, string constring)
         {
-            DataTable dt = _emailData.SendIpoEmailsData(
-                offerCode,
-                constring
-            );
+            DataTable dt = _emailData.SendIpoEmailsData(offerCode,constring);
 
             foreach (DataRow row in dt.Rows)
             {
@@ -43,27 +40,13 @@ namespace IPOApi.Services
                 try
                 {
                     await SendMail(row);
-
-                    _emailData.UpdateEmailStatus(
-                        offerCode,
-                        gid,
-                        "Y",
-                        "",
-                        constring
-                    );
+                    _emailData.UpdateEmailStatus(offerCode,gid, "Y", "",constring);
                 }
                 catch (Exception ex)
                 {
-                    _emailData.UpdateEmailStatus(
-                        offerCode,
-                        gid,
-                        "N",
-                        ex.Message,
-                        constring
-                    );
+                    _emailData.UpdateEmailStatus( offerCode, gid,  "N", ex.Message, constring);
                 }
             }
-
             return "Emails Processed Successfully";
         }
 
@@ -196,5 +179,34 @@ namespace IPOApi.Services
                                 </body> 
                                 </html>"; 
         }
+
+        // getemailListService
+        public DataSet getemailListService(string offer_code, string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                EmailData objDS = new EmailData();
+                ds = objDS.getemailListData(offer_code, constring);
+            }
+            catch (Exception e)
+            { }
+            return ds;
+        }
+
+        //GetbidfilecountsummaryService
+        public DataSet GetbidfilecountsummaryService(string ipo_code, string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                EmailData objDS = new EmailData();
+                ds = objDS.GetbidfilecountsummaryData(ipo_code, constring);
+            }
+            catch (Exception e)
+            { }
+            return ds;
+        }
+
     }
 }
