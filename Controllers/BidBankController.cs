@@ -17,13 +17,13 @@ namespace IPOApi.Controllers
             string constring = "";
 
         [HttpGet("GetbidBank")]
-        public IActionResult GetbidBank(string offer_code)
+        public IActionResult GetbidBank(string offer_code, string category)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             DataTable response = new DataTable();
             try
             {
-                response = BidBankService.GetbidBankService(offer_code, constring);
+                response = BidBankService.GetbidBankService(offer_code, category,constring);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }
