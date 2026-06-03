@@ -22,6 +22,7 @@
         public string? offer_remarks { get; set; }
         public string? client_code { get; set; }
         public string? user_code { get; set; }
+        public string? role_code { get; set; }
         public char active_status { get; set; }         
         public char delete_flag { get; set; }
     }
