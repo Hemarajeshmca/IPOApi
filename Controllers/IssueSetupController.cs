@@ -365,7 +365,22 @@ namespace IPOApi.Controllers
             }
         }
 
-
+        [HttpGet("GetAuditTrail")]
+        public IActionResult GetAuditTrail(string ipo_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = IssueSetupService.GetAuditTrailService(ipo_code, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
 
     }
 }
