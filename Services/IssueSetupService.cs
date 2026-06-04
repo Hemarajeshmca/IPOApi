@@ -182,5 +182,21 @@ namespace IPOApi.Services
             return ds;
         }
 
+        public static DataSet GetAuditTrailService(string offer_code, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                ds = objData.GetAuditTrailData(offer_code, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
     }
 }

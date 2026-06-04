@@ -401,5 +401,23 @@ namespace IPOApi.STADataAccess
 
             return result;
         }
+
+        public DataSet GetAuditTrailData(string ipo_code, string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_ipo_code", ipo_code, DbType.String));
+                ds = dbManager.execStoredProcedurelist("pr_ipo_set_auditlist", CommandType.StoredProcedure, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_ipo_set_auditlist Error Message: " + ex.Message);
+            }
+            return ds;
+        }
     }
 }
