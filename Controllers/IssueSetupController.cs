@@ -47,7 +47,7 @@ namespace IPOApi.Controllers
         }
 
         [HttpGet("GetOfferlist")]
-        public IActionResult Get_Offerlist()
+        public IActionResult Get_Offerlist(string in_user_code, string in_role_code)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             headerValue header_value = new headerValue();
@@ -60,7 +60,7 @@ namespace IPOApi.Controllers
                 header_value.user_code = getvalue;
                 header_value.lang_code = getlangCode;
                 header_value.role_code = getRoleCode;
-                response = IssueSetupService.Get_Offerlist(header_value, constring);
+                response = IssueSetupService.Get_Offerlist(in_user_code, in_role_code, header_value, constring);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }
