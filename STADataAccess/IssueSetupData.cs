@@ -93,6 +93,7 @@ namespace IPOApi.STADataAccess
                 parameters.Add(dbManager.CreateParameter("in_user_code", offerheader.user_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_role_code", offerheader.role_code, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_ipo_status", offerheader.ipo_status, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_boa_status", offerheader.boa_checked_status, DbType.String));
                 parameters.Add(dbManager.CreateParameter("out_msg", "", DbType.String, ParameterDirection.Output));
                 parameters.Add(dbManager.CreateParameter("out_result", 0, DbType.Int32, ParameterDirection.Output));
                 DataSet ds = dbManager.execStoredProcedure("pr_ipo_set_offerheader", CommandType.StoredProcedure,parameters.ToArray());
