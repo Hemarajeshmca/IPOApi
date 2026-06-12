@@ -46,5 +46,50 @@ namespace IPOApi.Services
             return ds;
         }
 
+        public static DataSet GetAddRejService(string offer_code, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                RejectionData objData = new RejectionData();
+                ds = objData.GetAddRejData(offer_code, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
+        public static DataSet saveaddrejdetails(RejectionModel insOb, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                RejectionData objData = new RejectionData();
+                ds = objData.saveaddrejdetail(insOb, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
+        public static DataSet Getrulecode(string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                RejectionData objData = new RejectionData();
+                ds = objData.Getrulecode(constring);
+            }
+            catch (Exception)
+            {
+            }
+            return ds;
+        }
     }
 }
