@@ -71,5 +71,60 @@ namespace IPOApi.Controllers
 
         }
 
+        [HttpGet("GetAddRejList")]
+        public IActionResult GetAddRejList(string ipo_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = RejectionService.GetAddRejService(ipo_code, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("saveAddRejDetails")]
+        public IActionResult saveAddRejDetails([FromBody] RejectionModel insObj)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            //headerValue header_value = new headerValue();
+            DataSet response = new DataSet();
+            try
+            {
+                response = RejectionService.saveaddrejdetails(insObj, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+
+        }
+
+        [HttpPost("Getrulecode")]
+        public IActionResult Getrulecode()
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = RejectionService.Getrulecode(constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+                //return Ok(response.Tables[0]);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+
     }
 }
