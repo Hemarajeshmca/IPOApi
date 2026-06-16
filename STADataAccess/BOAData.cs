@@ -1,5 +1,7 @@
-﻿using IPOApi.Models;
+﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+using IPOApi.Models;
 using System.Data;
+
 
 namespace IPOApi.STADataAccess
 {
@@ -92,5 +94,61 @@ namespace IPOApi.STADataAccess
                 return null;
             }
         }
+   
+        public DataSet InsertJobData(insertJobModel objinsertjob, string constring)
+        {
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_recon_code", objinsertjob.recon_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_jobtype_code", objinsertjob.jobtype_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_job_ref_gid", objinsertjob.job_ref_gid, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_job_name", objinsertjob.job_name, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_job_input_param", objinsertjob.job_input_param, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_job_initiated_by", objinsertjob.job_initiated_by, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_ip_addr", objinsertjob.ip_addr, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_job_status", objinsertjob.job_status, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_job_remark", objinsertjob.job_remark, DbType.String));
+                parameters.Add(dbManager.CreateParameter("out_job_gid", "out", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_msg", "out", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_result", "out", DbType.String, ParameterDirection.Output));
+                ds = dbManager.execStoredProcedure("pr_ins_job", CommandType.StoredProcedure, parameters.ToArray());
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_ins_job" + "Error Message:" + ex.Message);
+                return null;
+            }
+        }
+
+        public DataSet UpdateJobData(updateJobModel objupdatejob, string constring)
+        {
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_job_gid", Convert.ToInt32(objupdatejob.in_job_gid), DbType.Int32));
+                parameters.Add(dbManager.CreateParameter("in_job_status", objupdatejob.in_job_status, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_job_remark", objupdatejob.in_job_remark, DbType.String));                
+                parameters.Add(dbManager.CreateParameter("out_msg", "out", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_result", "out", DbType.String, ParameterDirection.Output));
+                ds = dbManager.execStoredProcedure("pr_upd_job", CommandType.StoredProcedure, parameters.ToArray());
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_upd_job" + "Error Message:" + ex.Message);
+                return null;
+            }
+        }
+
     }
 }
