@@ -131,7 +131,7 @@ namespace IPOApi.Middleware
                 //newTokenString = tokenHandler.WriteToken(newToken);
 
 
-                if (timeLeft <= TimeSpan.FromMinutes(4))
+                if (timeLeft <= TimeSpan.FromMinutes(Convert.ToInt32(_config["Jwt:Newtoken"])))
                 {
                     var newToken = new JwtSecurityToken(
                         issuer: _config["Jwt:Issuer"],
