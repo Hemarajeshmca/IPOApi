@@ -108,13 +108,13 @@ namespace IPOApi.Controllers
         }
 
         [HttpPost("Getrulecode")]
-        public IActionResult Getrulecode()
+        public IActionResult Getrulecode(string ipo_code)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             DataSet response = new DataSet();
             try
             {
-                response = RejectionService.Getrulecode(constring);
+                response = RejectionService.Getrulecode(constring, ipo_code);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
                 //return Ok(response.Tables[0]);

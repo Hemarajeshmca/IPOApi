@@ -127,14 +127,14 @@ namespace IPOApi.STADataAccess
             return ds;
         }
 
-        public DataSet Getrulecode(string constring1)
+        public DataSet Getrulecode(string constring1, string ipo_code)
         {
             DataSet ds = new DataSet();
             try
             {
                 DBManager dbManager = new DBManager(constring1);
                 parameters = new List<IDbDataParameter>(); // if no params, leave empty
-                                                           // parameters.Add(dbManager.CreateParameter("in_rule_code", rulecode, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_ipo_code", ipo_code, DbType.String));                                         // parameters.Add(dbManager.CreateParameter("in_rule_code", rulecode, DbType.String));
                 ds = dbManager.execStoredProcedurelist("pr_ipo_get_rulemaster", CommandType.StoredProcedure, parameters.ToArray());
             }
             catch (Exception ex)
