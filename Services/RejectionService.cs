@@ -78,13 +78,13 @@ namespace IPOApi.Services
             return ds;
         }
 
-        public static DataSet Getrulecode(string constring)
+        public static DataSet Getrulecode(string constring, string ipo_code)
         {
             DataSet ds = new DataSet();
             try
             {
                 RejectionData objData = new RejectionData();
-                ds = objData.Getrulecode(constring);
+                ds = objData.Getrulecode(constring,ipo_code);
             }
             catch (Exception)
             {
