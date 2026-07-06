@@ -198,5 +198,22 @@ namespace IPOApi.Services
             return ds;
         }
 
+        // GetifscdetailsService
+        public static DataSet GetifscdetailsService(string ifsc_search, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                ds = objData.GetifscdetailsData(ifsc_search, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
     }
 }

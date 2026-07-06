@@ -422,5 +422,26 @@ namespace IPOApi.STADataAccess
             }
             return ds;
         }
+
+        // GetifscdetailsData
+
+        public DataSet GetifscdetailsData(string ifsc_search, string constring)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_ifsc_search", ifsc_search, DbType.String));
+                ds = dbManager.execStoredProcedurelist("pr_get_tifscdetails", CommandType.StoredProcedure, parameters.ToArray());
+            }
+            catch (Exception ex)
+            {
+                CommonHeader objlog = new CommonHeader();
+                objlog.logger("SP:pr_get_tifscdetails Error Message: " + ex.Message);
+            }
+            return ds;
+        }
+
     }
 }
