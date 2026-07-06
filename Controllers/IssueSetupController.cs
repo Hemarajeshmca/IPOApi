@@ -382,5 +382,23 @@ namespace IPOApi.Controllers
             }
         }
 
+
+        [HttpGet("Getifscdetails")]
+        public IActionResult Getifscdetails(string ifsc_search)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = IssueSetupService.GetifscdetailsService(ifsc_search, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
     }
 }

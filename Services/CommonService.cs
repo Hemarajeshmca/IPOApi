@@ -116,5 +116,33 @@ namespace IPOApi.Services
             { }
             return ds;
         }
+        
+        public static DataTable boacheckedVistedService(boacheckedVistedModel objfetchcheckerVisted, UserManagementModel.headerValue headerval, string constring)
+        {
+            DataTable ds = new DataTable();
+            try
+            {
+                CommonHeader objDS = new CommonHeader();
+                ds = objDS.boacheckedVistedData(objfetchcheckerVisted, headerval, constring);
+            }
+            catch (Exception e)
+            { }
+            return ds;
+        }
+
+        //fetchcheckerVistedService
+        public static DataTable fetchcheckerVistedService(fetchcheckerVistedModel objboacheckedVisted, UserManagementModel.headerValue headerval, string constring)
+        {
+            DataTable ds = new DataTable();
+            try
+            {
+                CommonHeader objDS = new CommonHeader();
+                ds = objDS.fetchcheckerVistedData(objboacheckedVisted, headerval, constring);
+            }
+            catch (Exception e)
+            { }
+            return ds;
+        }
+
     }
 }

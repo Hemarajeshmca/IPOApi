@@ -324,6 +324,7 @@ namespace IPOApi.Controllers
                 return Problem(title: e.Message);
             }
         }
+       
         [HttpGet("schedulefiledelete")]
         public IActionResult schedulefiledelete([FromQuery] string filePath, [FromQuery] string fileName)
         {
@@ -344,5 +345,56 @@ namespace IPOApi.Controllers
                 return StatusCode(500, $"File delete failed: {ex.Message}");
             }
         }
+
+        [HttpPost("boacheckedVisted")]
+        public IActionResult boacheckedVisted([FromBody] CommonModel.boacheckedVistedModel objboacheckedVisted)
+        {
+            //headerValue header_value = new headerValue();
+            UserHeader header_value = new UserHeader();
+            DataTable response = new DataTable();
+            try
+            {
+                constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = CommonService.boacheckedVistedService(objboacheckedVisted, header_value, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("fetchcheckerVistedlist")]
+        public IActionResult fetchcheckerVistedlist([FromBody] CommonModel.fetchcheckerVistedModel objfetchcheckerVisted)
+        {
+            UserHeader header_value = new UserHeader();
+            DataTable response = new DataTable();
+            try
+            {
+                constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                var getlangCode = Request.Headers.TryGetValue("lang_code", out var lang_code) ? lang_code.First() : "";
+                var getRoleCode = Request.Headers.TryGetValue("role_code", out var role_code) ? role_code.First() : "";
+                header_value.user_code = getvalue;
+                header_value.lang_code = getlangCode;
+                header_value.role_code = getRoleCode;
+                response = CommonService.fetchcheckerVistedService(objfetchcheckerVisted, header_value, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+
     }
 }

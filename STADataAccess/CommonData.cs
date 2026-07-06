@@ -1,5 +1,6 @@
 ﻿using IPOApi.Models;
 using IPOApi.STADataAccess;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Data;
 using static IPOApi.Models.CommonModel;
@@ -234,8 +235,6 @@ namespace IPOApi.STADataAccess
         }
         public void logger(string sMessage)
 		{
-            //string logFilePath = "E:\\Mangai\\GNSA\\Registration\\IPOApi\\Logs\\error.log"; // "D:\\DMS Error Log\\error.log";
-            // string logFilePath = "D:\\Billing\\STABillingAPI\\Logs\\error.log";
             string logFilePath = "/flexicode/IPO_Files/Logs/error.log";
             string[] parts = sMessage.Split(new string[] { "SP:", "Message:" }, StringSplitOptions.None);
 			string result = parts[1].Trim();
@@ -249,21 +248,74 @@ namespace IPOApi.STADataAccess
 			objmodel.in_source_name = "SP";
 			objmodel.user_code = "STA";
 			commonData(objmodel, constring1);
-			// Ensure the directory exists
 			string logDirectory = Path.GetDirectoryName(logFilePath);
 			if (!Directory.Exists(logDirectory))
 			{
 				Directory.CreateDirectory(logDirectory);
 			}
-
-			// Append the error information to the log file
 			using (StreamWriter writer = new StreamWriter(logFilePath, true))
 			{
 				writer.WriteLine($"Timestamp: {DateTime.Now}");
-
 				writer.WriteLine($"Message: {sMessage}");
-				writer.WriteLine(new string('-', 40)); // Separator between entries
+				writer.WriteLine(new string('-', 40)); 
 			}
 		}
-	}
+
+        public DataTable boacheckedVistedData( boacheckedVistedModel objboacheckedVisted, UserManagementModel.headerValue hv, string constring)
+        {
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_ipo_code", objboacheckedVisted.in_ipo_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", objboacheckedVisted.in_user_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_role_code", objboacheckedVisted.in_role_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_pageName", objboacheckedVisted.pageName, DbType.String));
+                //parameters.Add(dbManager.CreateParameter("in_visited_offersetup", objboacheckedVisted.in_visited_offersetup, DbType.String));
+                //parameters.Add(dbManager.CreateParameter("in_visited_ipo_summary", objboacheckedVisted.in_visited_ipo_summary, DbType.String));
+                //parameters.Add(dbManager.CreateParameter("in_visited_bid_bank", objboacheckedVisted.in_visited_bid_bank, DbType.String));
+                //parameters.Add(dbManager.CreateParameter("in_visited_bid_upi", objboacheckedVisted.in_visited_bid_upi, DbType.String));
+                //parameters.Add(dbManager.CreateParameter("in_visited_upi_bid", objboacheckedVisted.in_visited_upi_bid, DbType.String));
+                //parameters.Add(dbManager.CreateParameter("in_visited_run_rejection", objboacheckedVisted.in_visited_run_rejection, DbType.String));
+                //parameters.Add(dbManager.CreateParameter("in_visited_offersetup", objboacheckedVisted.in_visited_offersetup, DbType.String));
+                parameters.Add(dbManager.CreateParameter("out_msg", "out", DbType.String, ParameterDirection.Output));
+                parameters.Add(dbManager.CreateParameter("out_result", "out", DbType.String, ParameterDirection.Output));
+                ds = dbManager.execStoredProcedure("pr_ipo_trn_tboacheckervisted", CommandType.StoredProcedure, parameters.ToArray());
+                result = ds.Tables[0];
+                return result;
+            }
+            catch (Exception ex)
+            {
+                logger("SP:pr_ipo_trn_tboacheckervisted" + " " + "Error Message:" + ex.Message);
+                return result;
+            }
+        }
+
+
+        //fetchcheckerVistedData
+        public DataTable fetchcheckerVistedData(fetchcheckerVistedModel objfetchcheckerVisted, UserManagementModel.headerValue hv, string constring)
+        {
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_ipo_code", objfetchcheckerVisted.in_ipo_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_code", objfetchcheckerVisted.in_user_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_role_code", objfetchcheckerVisted.in_role_code, DbType.String));
+                ds = dbManager.execStoredProcedure("pr_fetch_boacheckervisted", CommandType.StoredProcedure, parameters.ToArray());
+                result = ds.Tables[0];
+                return result;
+            }
+            catch (Exception ex)
+            {
+                logger("SP:pr_fetch_boacheckervisted" + " " + "Error Message:" + ex.Message);
+                return result;
+            }
+        }
+
+    }
 }
