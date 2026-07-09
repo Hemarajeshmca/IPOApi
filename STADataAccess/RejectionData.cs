@@ -79,7 +79,11 @@ namespace IPOApi.STADataAccess
             }
         }
 
-        public DataSet GetAddRejData(string ipo_code, string constring)
+        public DataSet GetAddRejData(string ipo_code,
+                                string appl_no,
+                                string order_no,
+                                string pan_no,
+                                string flag, string constring)
         {
             DataSet ds = new DataSet();
             try
@@ -87,6 +91,10 @@ namespace IPOApi.STADataAccess
                 DBManager dbManager = new DBManager(constring);
                 parameters = new List<IDbDataParameter>();
                 parameters.Add(dbManager.CreateParameter("in_ipo_code", ipo_code, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_appl_no", appl_no, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_order_no", order_no, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_pan_no", pan_no, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_flag", flag, DbType.String));
                 ds = dbManager.execStoredProcedurelist("pr_ipo_get_additonrejection_details", CommandType.StoredProcedure, parameters.ToArray());
             }
             catch (Exception ex)

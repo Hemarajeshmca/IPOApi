@@ -46,14 +46,23 @@ namespace IPOApi.Services
             return ds;
         }
 
-        public static DataSet GetAddRejService(string offer_code, string constring)
+        public static DataSet GetAddRejService(string ipo_code,
+                                          string appl_no,
+                                          string order_no,
+                                          string pan_no,
+                                          string flag, string constring)
         {
             DataSet ds = new DataSet();
 
             try
             {
                 RejectionData objData = new RejectionData();
-                ds = objData.GetAddRejData(offer_code, constring);
+                ds = objData.GetAddRejData(ipo_code,
+            appl_no,
+            order_no,
+            pan_no,
+            flag,
+            constring);
             }
             catch (Exception)
             {
