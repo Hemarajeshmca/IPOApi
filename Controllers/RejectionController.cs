@@ -72,13 +72,23 @@ namespace IPOApi.Controllers
         }
 
         [HttpGet("GetAddRejList")]
-        public IActionResult GetAddRejList(string ipo_code)
+        public IActionResult GetAddRejList(string ipo_code,
+                                     string appl_no,
+                                     string order_no,
+                                     string pan_no,
+                                     string flag)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
             DataSet response = new DataSet();
             try
             {
-                response = RejectionService.GetAddRejService(ipo_code, constring);
+                response = RejectionService.GetAddRejService(
+                                                               ipo_code,
+                                                               appl_no,
+                                                               order_no,
+                                                               pan_no,
+                                                               flag,
+                                                               constring);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }
@@ -87,7 +97,6 @@ namespace IPOApi.Controllers
                 return Problem(title: e.Message);
             }
         }
-
         [HttpPost("saveAddRejDetails")]
         public IActionResult saveAddRejDetails([FromBody] RejectionModel insObj)
         {
