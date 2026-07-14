@@ -1,9 +1,9 @@
 ﻿using IPOApi.Models;
-using IPOApi.Services;
-using IPOApi.STADataAccess;
+using IPOApi.Services; 
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Data;
+//using static IPOApi.Models.UserManagementModel;
 
 namespace IPOApi.Controllers
 {
@@ -101,11 +101,13 @@ namespace IPOApi.Controllers
         public IActionResult saveAddRejDetails([FromBody] RejectionModel insObj)
         {
             constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
-            //headerValue header_value = new headerValue();
+            headerValue header_value = new headerValue();
             DataSet response = new DataSet();
             try
             {
-                response = RejectionService.saveaddrejdetails(insObj, constring);
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                header_value.user_code = getvalue;
+                response = RejectionService.saveaddrejdetails(insObj, header_value, constring);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }

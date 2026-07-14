@@ -1,6 +1,7 @@
 ﻿using IPOApi.Models;
 using IPOApi.STADataAccess;
 using System.Data;
+//using static IPOApi.Models.UserManagementModel;
 
 namespace IPOApi.Services
 {
@@ -71,14 +72,14 @@ namespace IPOApi.Services
             return ds;
         }
 
-        public static DataSet saveaddrejdetails(RejectionModel insOb, string constring)
+        public static DataSet saveaddrejdetails(RejectionModel insOb, headerValue header_value, string constring)
         {
             DataSet ds = new DataSet();
 
             try
             {
                 RejectionData objData = new RejectionData();
-                ds = objData.saveaddrejdetail(insOb, constring);
+                ds = objData.saveaddrejdetail(insOb, header_value, constring);
             }
             catch (Exception)
             {

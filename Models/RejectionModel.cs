@@ -12,6 +12,8 @@
         public string rule_code { get; set; }
         public string addremarks { get; set; }
         public string rejremarks { get; set; }
+        public string audit_flag { get; set; }
+        public string flag { get; set; }
 
     }
 
