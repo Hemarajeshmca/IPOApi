@@ -12,6 +12,14 @@ namespace IPOApi.Services
             FundTransferLetterData objDS = new FundTransferLetterData();
             return objDS.GetBankDetailData(offer_code, constring);
         }
+
+        // GetBankDetaildownloadService
+        public static DataSet GetBankDetaildownloadService(string offer_code, string bank_code, string constring)
+        {
+            FundTransferLetterData objDS = new FundTransferLetterData();
+            return objDS.GetBankDetaildownloadData(offer_code, bank_code, constring);
+        }
+
         public static DataSet Export_allotment(string offer_code, string constring)
         {
             DataSet ds = new DataSet();
@@ -25,10 +33,10 @@ namespace IPOApi.Services
             return ds;
         }
 
-        public static DataSet Fund_Transfer_bank_details(string offer_code, string constring)
+        public static DataSet Fund_Transfer_bank_details(string offer_code, string bank_code, string constring)
         {
             FundTransferLetterData objDS = new FundTransferLetterData();
-            return objDS.Fund_Transfer_bank_details(offer_code, constring);
+            return objDS.Fund_Transfer_bank_details(offer_code, bank_code, constring);
         }
 
     }
