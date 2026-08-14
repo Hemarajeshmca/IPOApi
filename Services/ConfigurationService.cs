@@ -22,12 +22,11 @@ namespace IPOApi.Services
             return ds;
         }
 
-        public static DataTable UpdateConfig(string json,int userId,string constring)
+        public static DataTable UpdateConfig(string json,string constring)
         {
             ConfigurationData objData = new ConfigurationData();
             return objData.UpdateConfig(
-                json,
-                userId,
+                json,                
                 constring);
         }
     }

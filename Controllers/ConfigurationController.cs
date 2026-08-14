@@ -51,8 +51,8 @@ namespace IPOApi.Controllers
             {
                 constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
                 string json = JsonConvert.SerializeObject(objConfig);
-                int userId = Convert.ToInt32(Request.Headers["user_id"].FirstOrDefault());
-                DataTable response = ConfigurationService.UpdateConfig(json, userId,constring);
+                //string userId = Request.Headers["user_id"].FirstOrDefault();
+                DataTable response = ConfigurationService.UpdateConfig(json,constring);
                 var serializedProduct =JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }

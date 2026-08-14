@@ -2,7 +2,7 @@
 {
     public class ConfigurationModel
     {
-        public int user_id { get; set; }
+        public string user_id { get; set; }
         public string password_max_len { get; set; }
         public string password_min_len { get; set; }
         public string password_attempt_count { get; set; }

@@ -35,7 +35,7 @@ namespace IPOApi.STADataAccess
             }
         }
 
-        public DataTable UpdateConfig(string json,int userId,string constring)
+        public DataTable UpdateConfig(string json,string constring)
         {
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
             DataTable result = new DataTable();
@@ -43,8 +43,7 @@ namespace IPOApi.STADataAccess
             {
                 DBManager dbManager = new DBManager(constring);
 
-                parameters.Add(dbManager.CreateParameter("in_json",json,DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_user_id",userId,DbType.Int32));
+                parameters.Add(dbManager.CreateParameter("in_json",json,DbType.String));               
                 DataSet ds = dbManager.execStoredProcedure("pr_upd_config",CommandType.StoredProcedure,parameters.ToArray());
                 result = ds.Tables[0];
                 return result;
