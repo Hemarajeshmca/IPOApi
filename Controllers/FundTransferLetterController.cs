@@ -42,6 +42,34 @@ namespace IPOApi.Controllers
             }
         }
 
+        [HttpGet("getBankFundDetailsdownload")]
+        public IActionResult getBankFundDetailsdownload(string offer_code, string bank_code)
+        {
+            try
+            {
+                constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+
+                var ds = FundTransferLetterService.GetBankDetaildownloadService(offer_code, bank_code, constring);
+
+                var nsbsummarydownload = ConvertToList<NSBBankData>(ds.Tables[0]);
+                var sbsummarydownload = ConvertToList<SBBankData>(ds.Tables[1]);
+                var bankerdownload = ConvertToList<BankerData>(ds.Tables[2]);
+
+                return Ok(new
+                {
+                    nsbsummarydownload,
+                    sbsummarydownload,
+                    bankerdownload
+                });
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+
+
         [HttpGet("Export_allotment")]
         public IActionResult Export_allotment(string offer_code)
         {
@@ -60,7 +88,7 @@ namespace IPOApi.Controllers
         }
 
         [HttpGet("Fund_Transfer_bank_details")]
-        public IActionResult Fund_Transfer_bank_details(string offer_code)
+        public IActionResult Fund_Transfer_bank_details(string offer_code, string bank_code)
         {
             try
             {
@@ -71,7 +99,7 @@ namespace IPOApi.Controllers
                 DataSet ds =
                     FundTransferLetterService
                     .Fund_Transfer_bank_details(
-                        offer_code,
+                        offer_code, bank_code,
                         constring);
 
                 List<ExcelFileModel> files =
