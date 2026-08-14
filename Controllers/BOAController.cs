@@ -1,4 +1,5 @@
-﻿using IPOApi.Services;
+﻿using IPOApi.Models;
+using IPOApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Data;
@@ -75,6 +76,41 @@ namespace IPOApi.Controllers
             try
             {
                 response = BOAService.Export_allotment_bo(offer_code, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+
+        [HttpPost("insertJob")]
+        public IActionResult InsertJob([FromBody] insertJobModel objinsertjob)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = BOAService.InsertJobService(objinsertjob, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
+        [HttpPost("updateJob")]
+        public IActionResult UpdateJob([FromBody] updateJobModel objupdatejob)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = BOAService.UpdateJobService(objupdatejob, constring);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }

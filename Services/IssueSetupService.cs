@@ -26,14 +26,14 @@ namespace IPOApi.Services
             { }
             return ds;
         }
-        public static DataSet Get_Offerlist(headerValue headerval, string constring)
+        public static DataSet Get_Offerlist(string in_user_code, string in_role_code, headerValue headerval, string constring)
         {
             DataSet ds = new DataSet();
 
             try
             {
                 IssueSetupData objData = new IssueSetupData();
-                ds = objData.Get_Offerlist( headerval, constring);
+                ds = objData.Get_Offerlist(in_user_code, in_role_code, headerval, constring);
             }
             catch (Exception)
             {
@@ -190,6 +190,23 @@ namespace IPOApi.Services
             {
                 IssueSetupData objData = new IssueSetupData();
                 ds = objData.GetAuditTrailData(offer_code, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
+        // GetifscdetailsService
+        public static DataSet GetifscdetailsService(string ifsc_search, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                IssueSetupData objData = new IssueSetupData();
+                ds = objData.GetifscdetailsData(ifsc_search, constring);
             }
             catch (Exception)
             {

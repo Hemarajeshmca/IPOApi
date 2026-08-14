@@ -113,8 +113,9 @@ namespace IPOApi.Middleware
                 context.User = principal;
 
                 var expUtc = jwtToken.ValidTo;
-                var timeLeft = expUtc - DateTime.UtcNow;
-                string newTokenString = "";
+                var timeLeft = expUtc - DateTime.UtcNow; // DateTime.UtcNow;
+                string newTokenString = ""; 
+
 
                 //// 4️⃣ Generate new token with same claims but new expiry
                 //    var newToken = new JwtSecurityToken(
@@ -130,7 +131,7 @@ namespace IPOApi.Middleware
                 //newTokenString = tokenHandler.WriteToken(newToken);
 
 
-                if (timeLeft <= TimeSpan.FromMinutes(2))
+                if (timeLeft <= TimeSpan.FromMinutes(Convert.ToInt32(_config["Jwt:Newtoken"])))
                 {
                     var newToken = new JwtSecurityToken(
                         issuer: _config["Jwt:Issuer"],

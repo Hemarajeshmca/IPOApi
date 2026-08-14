@@ -1,9 +1,9 @@
 ﻿using IPOApi.Models;
-using IPOApi.Services;
-using IPOApi.STADataAccess;
+using IPOApi.Services; 
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Data;
+//using static IPOApi.Models.UserManagementModel;
 
 namespace IPOApi.Controllers
 {
@@ -70,6 +70,72 @@ namespace IPOApi.Controllers
             }
 
         }
+
+        [HttpGet("GetAddRejList")]
+        public IActionResult GetAddRejList(string ipo_code,
+                                     string appl_no,
+                                     string order_no,
+                                     string pan_no,
+                                     string flag)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = RejectionService.GetAddRejService(
+                                                               ipo_code,
+                                                               appl_no,
+                                                               order_no,
+                                                               pan_no,
+                                                               flag,
+                                                               constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+        [HttpPost("saveAddRejDetails")]
+        public IActionResult saveAddRejDetails([FromBody] RejectionModel insObj)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            headerValue header_value = new headerValue();
+            DataSet response = new DataSet();
+            try
+            {
+                var getvalue = Request.Headers.TryGetValue("user_code", out var user_code) ? user_code.First() : "";
+                header_value.user_code = getvalue;
+                response = RejectionService.saveaddrejdetails(insObj, header_value, constring);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+
+        }
+
+        [HttpPost("Getrulecode")]
+        public IActionResult Getrulecode(string ipo_code)
+        {
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            DataSet response = new DataSet();
+            try
+            {
+                response = RejectionService.Getrulecode(constring, ipo_code);
+                var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+                return Ok(serializedProduct);
+                //return Ok(response.Tables[0]);
+            }
+            catch (Exception e)
+            {
+                return Problem(title: e.Message);
+            }
+        }
+
 
     }
 }

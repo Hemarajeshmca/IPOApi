@@ -1,6 +1,7 @@
 ﻿using IPOApi.Models;
 using IPOApi.STADataAccess;
 using System.Data;
+//using static IPOApi.Models.UserManagementModel;
 
 namespace IPOApi.Services
 {
@@ -46,5 +47,59 @@ namespace IPOApi.Services
             return ds;
         }
 
+        public static DataSet GetAddRejService(string ipo_code,
+                                          string appl_no,
+                                          string order_no,
+                                          string pan_no,
+                                          string flag, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                RejectionData objData = new RejectionData();
+                ds = objData.GetAddRejData(ipo_code,
+            appl_no,
+            order_no,
+            pan_no,
+            flag,
+            constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
+        public static DataSet saveaddrejdetails(RejectionModel insOb, headerValue header_value, string constring)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                RejectionData objData = new RejectionData();
+                ds = objData.saveaddrejdetail(insOb, header_value, constring);
+            }
+            catch (Exception)
+            {
+            }
+
+            return ds;
+        }
+
+        public static DataSet Getrulecode(string constring, string ipo_code)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                RejectionData objData = new RejectionData();
+                ds = objData.Getrulecode(constring,ipo_code);
+            }
+            catch (Exception)
+            {
+            }
+            return ds;
+        }
     }
 }
