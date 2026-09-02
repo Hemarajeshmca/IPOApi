@@ -2,13 +2,14 @@
 using IPOApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using ReconDataLayer;
 using System.Data;
 
 namespace IPOApi.Controllers
 {
     public class BOAController : Controller
     {
-        private IConfiguration _configuration;
+        private IConfiguration _configuration;      
         public BOAController(IConfiguration configuration)
         {
             _configuration = configuration;
