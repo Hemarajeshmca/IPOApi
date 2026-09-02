@@ -171,16 +171,35 @@ namespace IPOApi.Controllers
             }
         }
 
+        //[HttpPost("ChkLogin")]
+        //public IActionResult ChkLogin([FromBody] LoginModel iudObj)
+        //{
+
+        //    constring = _configuration.GetSection("Appsettings")["CMUS_Connection"].ToString();
+        //    //headerValue header_value = new headerValue();
+        //    DataSet response = new DataSet();
+        //    try
+        //    {
+        //        response = objData.getchngpwdflag(iudObj, constring);
+        //        var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
+        //        return Ok(serializedProduct);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return Problem(title: e.Message);
+        //    }
+        //}
+
         [HttpPost("ChkLogin")]
         public IActionResult ChkLogin([FromBody] LoginModel iudObj)
         {
 
-            constring = _configuration.GetSection("Appsettings")["CMUS_Connection"].ToString();
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();           
             //headerValue header_value = new headerValue();
             DataSet response = new DataSet();
             try
             {
-                response = objData.getchngpwdflag(iudObj, constring);
+                response = objData.Users_login(iudObj, constring);
                 var serializedProduct = JsonConvert.SerializeObject(response, Formatting.None);
                 return Ok(serializedProduct);
             }
@@ -190,9 +209,7 @@ namespace IPOApi.Controllers
             }
         }
 
-    
-
-    private string GenerateJwtToken(string email, string userId, string role)
+        private string GenerateJwtToken(string email, string userId, string role)
         {
             var issuer = AuthController.Decrypt(_configuration["Jwt:Issuer"]);
             var audience = AuthController.Decrypt(_configuration["Jwt:Audience"]);

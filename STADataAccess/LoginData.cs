@@ -107,6 +107,29 @@ namespace IPOApi.STADataAccess
             return ds;
         }
 
+        public DataSet Users_login(LoginModel iudObj, string constring)
+        {
+            try
+            {
+                DBManager dbManager = new DBManager(constring);
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MySqlDataAccess con = new MySqlDataAccess("");
+                parameters = new List<IDbDataParameter>();
+                parameters.Add(dbManager.CreateParameter("in_user_code", iudObj.empcode, DbType.String));
+                parameters.Add(dbManager.CreateParameter("in_user_pwd", iudObj.txt_pwd, DbType.String));
+                ds = dbManager.execStoredProcedurelist("pr_GNSA_Login_Validate", CommandType.StoredProcedure, parameters.ToArray());
+                string msgs = ds.Tables[0].Rows[0]["message"].ToString();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+
+                objlog.logger("SP:pr_GNSA_Login_Validate - Method Name " + "Error Message:" + ex.Message);
+                return ds;
+            }
+
+        }
+
         public DataSet getchngpwdflag(LoginModel iudObj, string constring)
         {
             try
