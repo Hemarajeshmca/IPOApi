@@ -112,22 +112,42 @@ namespace IPOApi.STADataAccess
             try
             {
                 DBManager dbManager = new DBManager(constring);
-                Dictionary<string, Object> values = new Dictionary<string, object>();
-                MySqlDataAccess con = new MySqlDataAccess("");
                 parameters = new List<IDbDataParameter>();
-                parameters.Add(dbManager.CreateParameter("in_user_code", iudObj.empcode, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_user_pwd", iudObj.txt_pwd, DbType.String));
-                ds = dbManager.execStoredProcedurelist("pr_GNSA_Login_Validate", CommandType.StoredProcedure, parameters.ToArray());
-                string msgs = ds.Tables[0].Rows[0]["message"].ToString();
-                return ds;
+                parameters.Add(dbManager.CreateParameter( "in_user_code", iudObj.empcode, DbType.String));
+                parameters.Add(dbManager.CreateParameter( "in_user_pwd", iudObj.txt_pwd, DbType.String));
+                DataSet loginDs = dbManager.execStoredProcedurelist( "pr_GNSA_Login_Validate", CommandType.StoredProcedure, parameters.ToArray());
+                string msgs = loginDs.Tables[0].Rows[0]["message"].ToString();
+                string userName = Convert.ToString( loginDs.Tables[0].Rows[0]["user_name"]);
+                int success = Convert.ToInt32(loginDs.Tables[0].Rows[0]["success"]);
+                // Insert login audit only
+                if (success == 1)
+                {
+                    // Successful login
+                    getLogindetails(
+                        iudObj,
+                        constring,
+                        "SUCCESS",
+                        "",
+                        userName);
+                }
+                else
+                {
+                    // Failed login
+                    getLogindetails(
+                        iudObj,
+                        constring,
+                        "FAILED",
+                        msgs,
+                        userName);
+                }
+                return loginDs;
             }
             catch (Exception ex)
             {
-
-                objlog.logger("SP:pr_GNSA_Login_Validate - Method Name " + "Error Message:" + ex.Message);
+                objlog.logger( "SP:pr_GNSA_Login_Validate - Method Name " +  "Error Message:" + ex.Message);
+                getLogindetails(iudObj, constring,  "FAILED", ex.Message, "");
                 return ds;
             }
-
         }
 
         public DataSet getchngpwdflag(LoginModel iudObj, string constring)
@@ -140,47 +160,41 @@ namespace IPOApi.STADataAccess
                 parameters = new List<IDbDataParameter>();
                 parameters.Add(dbManager.CreateParameter("in_user_code", iudObj.empcode, DbType.String));
                 parameters.Add(dbManager.CreateParameter("in_user_pwd", iudObj.txt_pwd, DbType.String));
-
                 ds = dbManager.execStoredProcedurelist("pr_GNSA_Login_Validate", CommandType.StoredProcedure, parameters.ToArray());
-                getLogindetails(iudObj, constring, "SUCCESS","");
+                //getLogindetails(iudObj, constring, "SUCCESS","");
                 return ds;
             }
             catch (Exception ex)
             {
 
                 objlog.logger("SP:pr_GNSA_Login_Validate - Method Name " + "Error Message:" + ex.Message);
-                getLogindetails(iudObj, constring, "FAILED", ex.Message);
+                //getLogindetails(iudObj, constring, "FAILED", ex.Message);
                 return ds;
             }
 
         }
 
-        public DataSet getLogindetails(LoginModel iudObj, string constring,string login_action,string msg)
+        public void getLogindetails(LoginModel iudObj,string constring, string login_action, string msgs, string userName)
         {
             try
             {
                 DBManager dbManager = new DBManager(constring);
-                Dictionary<string, Object> values = new Dictionary<string, object>();
-                MySqlDataAccess con = new MySqlDataAccess("");
                 parameters = new List<IDbDataParameter>();
-                parameters.Add(dbManager.CreateParameter("in_user_code", iudObj.empcode, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_login_date", DateTime.Now, DbType.String));                
-                parameters.Add(dbManager.CreateParameter("in_login_status", login_action, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_failure_reason", msg, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_ip_address", iudObj.ipaddress, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_browser_name", iudObj.browseragent, DbType.String));
-                parameters.Add(dbManager.CreateParameter("in_session_id", iudObj.LoginSessionId, DbType.String));
-
-                ds = dbManager.execStoredProcedurelist("pr_ins_loginlog", CommandType.StoredProcedure, parameters.ToArray());
-                return ds;
+                parameters.Add(dbManager.CreateParameter( "in_user_code", iudObj.empcode, DbType.String));
+                parameters.Add(dbManager.CreateParameter( "in_user_name", userName,  DbType.String));
+                //parameters.Add(dbManager.CreateParameter( "in_login_date", DateTime.Now, DbType.DateTime));
+                parameters.Add(dbManager.CreateParameter( "in_login_date", TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "India Standard Time"), DbType.DateTime));
+                parameters.Add(dbManager.CreateParameter( "in_login_status", login_action,  DbType.String));
+                parameters.Add(dbManager.CreateParameter( "in_failure_reason", msgs, DbType.String));
+                parameters.Add(dbManager.CreateParameter( "in_ip_address", iudObj.ipaddress, DbType.String));
+                parameters.Add(dbManager.CreateParameter( "in_browser_name",  iudObj.browseragent, DbType.String));
+                parameters.Add(dbManager.CreateParameter( "in_session_id", iudObj.LoginSessionId, DbType.String));
+                dbManager.execStoredProcedurelist( "pr_ins_loginlog",  CommandType.StoredProcedure,  parameters.ToArray());
             }
             catch (Exception ex)
             {
-
-                objlog.logger("SP:pr_ins_loginlog - Method Name " + "Error Message:" + ex.Message);
-                return ds;
+                objlog.logger( "SP:pr_ins_loginlog - Method Name " + "Error Message:" + ex.Message);
             }
-
         }
     }
 }
